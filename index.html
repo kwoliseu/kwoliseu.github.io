@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title> :: DESIGNERS PARK SEUL KI :: </title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="msapplication-TileColor" content="">
+    
+    <link rel="shortcut icon" href="./img/icon.png">
+        
+    <script src="index.js"></script>    
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'NanumSquare', sans-serif !important;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+        }
+        a {
+            text-decoration: none;
+        }
+        img {
+            border: 0;
+        }
+        
+        .cover {
+            width: 100%;
+            height: 100%;
+            background-image: url(img/bg-cover.png);
+            background-size: cover;
+        }
+        
+        .imgBox {
+            position: absolute;
+            width: 100%;
+            height: 343px;
+        }
+        .cover a {
+            position: absolute;
+            width: 500px;
+            height: 100%;
+            background-image: url(img/cover1.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            margin-left: calc((100% - 500px)/2);
+            margin-top: 15%;
+            transition: 0.5s;
+        }
+        .cover a:hover {
+            transition: 0.8s;
+            background-image: url(img/cover2.png);
+        }
+        
+        
+        
+        @media screen and (max-width: 480px) {
+            .cover a {
+                width: 260px;
+                margin-left: calc((100% - 260px)/2);
+                margin-top: 60%;
+            }
+        }
+        @media screen and (min-width:481px)  and (max-width: 768px) {
+            .cover a {
+                width: 350px;
+                margin-left: calc((100% - 350px)/2);
+                margin-top: 45%;
+            }
+        }
+        @media screen and (min-width:769px) and (max-width: ) {
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="cover">
+        <div class="imgBox">
+            <a href="about.html">
+            </a>
+        </div>
+    </div>
+</body>
+</html>
