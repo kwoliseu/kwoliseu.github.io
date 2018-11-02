@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title> :: PSK PORTFOLIO :: </title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">   
+    
+    <link rel="shortcut icon" href="./img/icon.png">
+    
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="contact.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'NanumSquare', sans-serif !important;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+        }
+        ul, li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        img {
+            border: 0;
+        }
+        
+        
+        
+        
+        body{            
+            background:url(img/bg-cover.png) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        
+        .wrap {
+            width: 100%;
+            height: 100%;
+        }
+        
+        
+        
+        
+        .hd {
+            width: 100%;
+            height: 80px;
+            border-bottom: 1px solid #fff;
+        }
+        .hdWrap {
+            width: 100%;
+            height: 100%;
+        }
+        .menu {
+            position: absolute;
+            width: 100%;
+            display: block;
+        }
+        .menu li {
+            float: left;
+            width: 120px;
+            height: 83px;
+        }
+        .menu li a {
+            position: absolute;
+            width: 120px;
+            height: 83px;
+        }
+        
+        
+        
+        
+        .about {
+            background-image: url(./img/ABOUT-1.png);
+            background-size: 80%;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: 0.4s;
+        }
+        .about:hover {
+            background-image: url(./img/ABOUT-2.png);
+        }
+        .skills {
+            background-image: url(./img/SKILLS-1.png);
+            background-size: 80%;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: 0.4s;
+        }
+        .skills:hover {
+            background-image: url(./img/SKILLS-2.png);
+        }
+        .portfoloio {
+            background-image: url(./img/PORTFOLIO-1.png);
+            background-size: 80%;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: 0.4s;
+        }
+        .portfoloio:hover {
+            background-image: url(./img/PORTFOLIO-2.png);
+        }
+        .contact {
+            background-image: url(./img/CONTACT-2.png);
+            background-size: 80%;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: 0.4s;
+        }
+        .contact:hover {
+            background-image: url(./img/CONTACT-2.png);
+        }
+        
+        
+        .a1, .p1 {
+            margin-right: 8%;
+        }
+        .s1 {
+            margin-right: 18%;
+        }
+        
+        
+        .a1 {
+            position: absolute;
+            margin-left: 20%
+        }
+        .s1 {
+            position: absolute;
+            margin-left: 33%
+        }
+        .p1 {
+            position: absolute;
+            margin-left: 60%
+        }
+        .c1 {
+            position: absolute;
+            margin-left: 73%
+        }
+        
+        .logo {
+            position: absolute;
+            width: 75px;
+            margin-left: calc((100% - 75px)/2);
+            margin-top: 15px;
+        }
+        .logo img {
+            width: 100%;
+        }
+        
+        
+        
+        
+        
+        .mMenu {
+            cursor: pointer;
+            position: absolute;
+            left: 5%;
+            top: 29.5px;
+            z-index: 2;
+            transition: 0.8s;
+            display: none;
+        }
+        
+        
+        
+        
+        
+        .con1 {
+            width: 100%;
+            height: calc(100% - 81px);
+        }
+        .con1Wrap {
+            width: 40%;
+            height: 521px;
+            position: absolute;
+            text-align: center;
+            margin-left: calc((100% - 40%)/2);
+            top: 28%;
+        }
+        h1 {
+            color: #fff;
+            font-size: 3em;
+            position: absolute;
+            width: 354px;
+            margin-left: calc((100% - 354px)/2);
+        }
+        
+        .line {
+            position: absolute;
+            width: 100%;
+            height: 8px;
+            background-color: #fff;
+            border-radius: 15px;
+            top: 26%;
+            display: none;
+        }
+        
+        .text {
+            position: absolute;
+            color: #fff;
+            font-size: 18px;
+            width: 170px;
+            margin-left: calc((100% - 170px)/2);
+            top: 40%;
+            font-weight: lighter;
+        }
+        .cover {
+            margin-top: 6%;
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        @media screen and (max-width: 480px) {
+            .mMenu {
+                display: block;
+            }
+            .menu {
+                display: none;
+            }
+            
+            .logo {
+                right: 5%;
+                margin-left: 0;
+                width: 50px;
+                margin-top: 12px;
+            }
+            
+            
+            .con1Wrap {
+                width: 90%;
+                margin-left: calc((100% - 90%)/2);
+            }
+            .line {
+                display: block;
+            }
+            .cover {
+                display: none;
+            }
+            
+            
+        }
+        @media screen and (min-width:481px)  and (max-width: 768px) {
+            .mMenu {
+                display: block;
+            }
+            .menu {
+                display: none
+            }
+            
+            .logo {
+                right: 5%;
+                margin-left: 0;
+                width: 50px;
+                margin-top: 12px;
+            }
+            
+            
+            
+
+            .con1Wrap {
+                width: 80%;
+                margin-left: calc((100% - 80%)/2);
+            }
+            .line {
+                display: block;
+            }
+            .cover {
+                display: none;
+            }
+            
+            
+        }
+        @media screen and (min-width: 769px) and (max-width: 1500px) {
+            
+            .con1Wrap {
+                width: 65%;
+                margin-left: calc((100% - 65%)/2);
+            }
+            .line {
+                display: block;
+            }
+            .cover {
+                display: none;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="hd">
+            <div class="hdWrap">
+                <a href="index.html" class="logo">
+                    <img src="./img/logo.png" alt="logo">
+                </a>
+                <ul class="menu">
+                    <li class="a1">
+                        <a href="about.html" class="about"></a>
+                    </li>
+                    <li class="s1">
+                        <a href="skills.html" class="skills"></a>
+                    </li>
+                    <li class="p1">
+                        <a href="portfolio.html" class="portfoloio"></a>
+                    </li>
+                    <li class="c1">
+                        <a href="contact.html" class="contact"></a>
+                    </li>
+                </ul>
+                <div class="mMenu">
+                    <img src="./img/menu.png" alt="menu">
+                </div>
+            </div>
+        </header>
+        <div class="con1">
+            <div class="con1Wrap">
+                <h1>THANK YOU<br>FOR WATCHING</h1>
+                <div class="line"></div>
+                <p class="text"><strong>PHONE NUMBER</strong><br>010 - 4658 - 4438<br><br><strong>EMAIL ADDRESS</strong><br>kwoliseu@naver.com<br><br><strong>ADDRESS</strong><br>대전광역시 대덕구</p>
+                <img src="./img/contact_cover.png" alt="cover" class="cover">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
