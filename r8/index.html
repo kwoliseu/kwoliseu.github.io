@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>한국건설관리공사</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="./index.js"></script>
+    <style>
+        /* 기본 */
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'NanumSquare', sans-serif !important;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        a {
+            text-decoration: none;
+        }
+        li, ul {
+            list-style: none;
+        }
+        img {
+            border: 0;
+        }
+        
+        /* hd */
+        #hd {
+            width: 100%;
+            height: 60px;
+            background-color: #fff;
+            position: fixed;
+            z-index: 10;
+        }
+        .logo img {
+            margin-left: 8%;
+            margin-top: 8.5px;
+        }
+        .menuBox {
+            float: right;
+            margin-right: 8%;
+            margin-top: 17px;
+            width: 52%;
+        }
+        .menuBox li {
+            float: left;
+            width: 14%;
+            cursor: pointer;
+            text-align: center;
+        }
+        .menuBox li.on {
+            color: #0f4a99;
+            font-weight: bold
+        }
+        
+        /* sub */
+        #sub {
+            float: right;
+            margin-right: 8%;
+            background-color: #0f4a99;
+            z-index: 8;
+            display: none;
+            width: 52%;
+        }
+        .subWrap ul {
+            float: left;
+            width: 14%;
+        }
+        .subWrap ul li {
+            text-align: center;
+            line-height: 35px;
+        }
+        .subWrap ul li a {
+            color: #fff;
+            font-size: 0.8em;
+            z-index: 9;
+        }
+        .subWrap ul li a:hover {
+            border-bottom: 1px solid #fff;
+        }
+        
+        /* vs */
+        #vs {
+            width: 100%;
+        }
+        .vsWrap {
+            width: 100%;
+        }
+        .tit {
+            position: absolute;
+        }
+        .vsImg {
+            width: 100%;
+        }
+        
+        /*con1*/
+        .con1 {
+            padding:50px;
+        }
+        
+        /* ft */
+        .footer {
+            padding-bottom: 3rem;
+        }
+        
+        
+        
+        
+        
+        
+        /* 모바일메뉴 */
+        
+        .mMenu {
+            display: none;
+            position: absolute;
+            right: 10%;
+            top: 20px;
+        }
+        
+        .collMenu {
+            position: absolute;
+        }
+        
+        .collWrap {
+            width: 280px;
+            height: 100%;
+            background-color: #fff;
+            transition: 0.6s;
+            z-index: 99;
+            right: -100%;
+            position: fixed;
+            top: 0;
+        }
+        
+        .collWrap.on {
+            right: 0%;
+        }
+        
+        .mHd {
+            width: 100%;
+            height: 80px;
+            background-color: #0b4898;
+            position: absolute;
+        }
+        
+        .back {
+            position: absolute;
+            left: 5%;
+            top: 14.5px;
+            cursor: pointer;
+        }
+        
+        .mLogo {
+            display: none;
+            position: absolute;
+            right: 3%;
+            top: 14.5px;
+        }
+                
+        .mTopMenu li {
+            position: relative;
+            float: left;
+            margin-left: 7%;
+            left: 142px;
+            top: 50px
+        }
+        .mTopMenu li a {
+            color: #fff;
+            font-size: 0.8em;
+        }
+        .mMenuList {
+            position: absolute;
+            width: 100%;
+        }
+        .mGnb {
+            position: absolute;
+            width: 100%;
+            top: 80px;
+        }
+        .mGnb li {
+            width: 100%;
+            position: relative;
+            clear: both;
+            line-height: 14px;
+        }
+        
+        .mGnb li div {
+            cursor: pointer;
+            font-size: 1.1em;
+            border-bottom: 0.5px solid #0b4898;
+        }
+        
+        .mGnb li div.on {
+            background-color: #F9CCD2;
+        }
+        
+        .mMenuText {
+            margin-left: 5%;
+            line-height: 60px;
+        }
+        
+        .mSubList {
+            display: none;
+            width: 100%;
+            background-color: cornsilk;
+        }
+        
+        .mSubList.on {
+            display: block;
+        }
+        
+        .mSubList li {
+            width: 100%;
+            clear: both;
+            position: relative;
+            border-bottom: 1px solid #0b4898;
+            background-color: #f2f2f2;
+        }
+        
+        .mSubList li a {
+            width: 100%;
+            font-weight: 300;
+            margin-left: 15%;
+            color: #333;
+        }
+        
+        .mSubList li a p {
+            margin-left: 15%;
+        }
+        
+        
+        .cover {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            background: rgba(0,0,0,0);
+            transition: 0.8s;
+            z-index: 0;
+        }
+        .cover.on {
+            background: rgba(0,0,0,0.8);
+            z-index: 98;
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        @media screen and (min-width:768px) and (max-width:959px) {
+            .menuBox {
+                display: none;
+            }
+            .mMenu {
+                display: block;
+            }
+            
+        }
+        
+        @media screen and (max-width:767px) {
+            .menuBox {
+                display: none;
+            }
+            .mMenu {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="hd">
+        <a href="index.html" class="logo">
+            <img src="./img/logo.png" alt="logo">
+        </a>
+        <ul class="menuBox">
+            <li class="menu">정보공개</li>
+            <li class="menu">공사소개</li>
+            <li class="menu">경영공시</li>
+            <li class="menu">사업분야</li>
+            <li class="menu">기술연구소</li>
+            <li class="menu">홍보마당</li>
+            <li class="menu">고객참여</li>
+        </ul>
+        <div id="sub">
+            <div class="subWrap">
+                <ul class="subBox1">
+                    <li><a href="#">정보공개</a></li>
+                    <li><a href="#">공공데이터개방</a></li>
+                    <li><a href="#">사업실명제</a></li>
+                </ul>
+                <ul class="subBox2">
+                    <li><a href="#">미션/비전</a></li>
+                    <li><a href="#">공사개요</a></li>
+                    <li><a href="#">조직도/연락처</a></li>
+                    <li><a href="#">건설사업관리</a></li>
+                    <li><a href="#">주요고객</a></li>
+                    <li><a href="#">제휴업체</a></li>
+                    <li><a href="#">오시는길</a></li>
+                </ul>
+                <ul class="subBox3">
+                    <li><a href="#">일반현황</a></li>
+                    <li><a href="#">인사 및 조직현황</a></li>
+                    <li><a href="#">주요사업 및 경영성과</a></li>
+                    <li><a href="#">대내외 평가</a></li>
+                    <li><a href="#">공공기관 정상화 추진</a></li>
+                    <li><a href="#">부패방지/청렴</a></li>
+                    <li><a href="#">기타공시</a></li>
+                </ul>
+                <ul class="subBox4">
+                    <li><a href="#">CM분야</a></li>
+                    <li><a href="#">토목CM분야</a></li>
+                    <li><a href="#">건축CM분야</a></li>
+                    <li><a href="#">설계분야</a></li>
+                </ul>
+                <ul class="subBox5">
+                    <li><a href="#">소개</a></li>
+                    <li><a href="#">연혁</a></li>
+                    <li><a href="#">기술연구소역할</a></li>
+                    <li><a href="#">운영방침</a></li>
+                    <li><a href="#">기술자료</a></li>
+                    <li><a href="#">건설신기술</a></li>
+                </ul>
+                <ul class="subBox6">
+                    <li><a href="#">KCM뉴스</a></li>
+                    <li><a href="#">수주정보</a></li>
+                    <li><a href="#">홍보동영상</a></li>
+                    <li><a href="#">홍보브로셔</a></li>
+                    <li><a href="#">채용공고</a></li>
+                    <li><a href="#">관련사이트</a></li>
+                </ul>
+                <ul class="subBox7">
+                    <li><a href="#">고객의 소리</a></li>
+                    <li><a href="#">직원칭찬합시다</a></li>
+                    <li><a href="#">부정부패신고</a></li>
+                    <li><a href="#">공익신고</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mMenu"><img src="./img/m-menu.png" alt="menu"></div>
+    </header>
+    
+        <div class="collMenu">
+            <div class="collWrap">
+                    <header class="mHd">
+                        <div class="back"><img src="./img/back.png" alt="back"></div>
+                        <div class="mLogo"><img src="./img/logo_w.png" alt="logo"></div>
+                        <div class="cover1"></div>
+                    </header>
+                    <div class="mMenuList">
+                        <ul class="mGnb">
+                            <li>
+                                <div>
+                                    <p class="mMenuText">정보공개</p>
+                                </div>
+                                <ul class="mSubList">
+                                    <li>
+                                        <a href=""><p>정보공개</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>공공데이터개방</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>사업실명제</p></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div>
+                                    <p class="mMenuText">공사소개</p>
+                                </div>
+                                <ul class="mSubList">
+                                    <li>
+                                        <a href=""><p>미션/비전</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>공사개요</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>조직도/연락처</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>건설사업관리</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>주요고객</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>제휴업체</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>오시는길</p></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div>
+                                    <p class="mMenuText">경영공시</p>
+                                </div>
+                                <ul class="mSubList">
+                                    <li>
+                                        <a href=""><p>일반현황</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>인사 및 조직현황</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>주요사업 및 경영성과</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>대내외 평가</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>공공기관 정상화</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>부패방지/청렴</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>기타공시</p></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div>
+                                    <p class="mMenuText">사업분야</p>
+                                </div>
+                                <ul class="mSubList">
+                                    <li>
+                                        <a href=""><p>CM분야</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>토목CM분야</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>건축CM분야</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>설계분야</p></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div>
+                                    <p class="mMenuText">기술연구소</p>
+                                </div>
+                                <ul class="mSubList">
+                                    <li>
+                                        <a href=""><p>소개</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>연혁</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>기술연구소역할</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>운영방침</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>기술자료</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>건설신기술</p></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div>
+                                    <p class="mMenuText">홍보마당</p>
+                                </div>
+                                <ul class="mSubList">
+                                    <li>
+                                        <a href=""><p>KCM뉴스</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>수주정보</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>홍보동영상</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>홍보브로셔</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>채용공고</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>관련사이트</p></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div>
+                                    <p class="mMenuText">고객참여</p>
+                                </div>
+                                <ul class="mSubList">
+                                    <li>
+                                        <a href=""><p>고객의소리</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>직원칭찬합시다</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>부정부패신고</p></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><p>공익신고</p></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            <div class="cover"></div>
+        </div>
+    <div id="vs">
+        <div class="vsWrap">
+            <img src="./img/tit2.png" alt="안전하고 철저한 건설사업관리" class="tit">
+            <ul class="vsImg">
+                <li><img src="./img/vsImg1.png" alt="vsImg1"></li>
+            </ul>
+        </div>
+    </div>
+    <div class="con1">
+        <div class="container" id="con1">
+            <div class="tile is-ancestor">
+              <div class="tile is-vertical is-8">
+                <div class="tile">
+                  <div class="tile is-parent is-vertical">
+                    <article class="tile is-child box" style="padding:2px;">
+                        <div class="banner">
+                            <div class="bWrap">
+                                <ul class="bBox">
+                                    <li>
+                                        <a href="#"><img src="./img/banner1.png" alt="banner1"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="tile is-child box">
+                      <p class="title">KCM NEWS</p>
+                      <p class="subtitle">공지사항게시글</p>
+                    </article>
+                  </div>
+                  <div class="tile is-parent">
+                    <article class="tile is-child box">
+                      <p class="title">홍보영상</p>
+                      <p class="subtitle">공익성과 신뢰성을 최우선합니다.</p>
+                      <figure class="image is-4by3">
+                        <a href="#"><img src="./img/movImg.png" alt="movImg"></a>
+                      </figure>
+                    </article>
+                  </div>
+                </div>
+              </div>
+              <div class="tile is-parent">
+                <article class="tile is-child box">
+                  <div class="content">
+                    <p class="title">기술연구소 소개</p>
+                    <p class="subtitle">신공법·신기술 개발로 새로운 건설문화를 선도하겠습니다.</p>
+                    <p style="font-size: 0.85em;">한국건설관리공사 기술연구소는 오랜 기간동안 축적해 온 설계 및 감리·건설사업관리의 경험을 바탕으로 급속히 발전하는 건설기술의 효과적인 활용 및 건설시장의 개발에 효율적으로 대처하여 공기업으로서의 국내 건설용역분야의 선도적인 위치를 지키기 위해 설립된 이래 박사, 기술사등 우수인력을 보강하는 한편 연구시설에 대한 투자도 지속적으로 확대해 왔습니다.
+                    <br>
+                    <br>
+                    동 연구소는 건설신기술 실용신안 및 특허 등의 기술개발 추진 및 도로분야, 구조분야, 지반분야 등의 3개 전문분야별로 연구전담팀이 구성되어 각 분야의 연구개발에 주력하고 있으며 연구결과를 관련 부서 및 현장 그리고 CM기법에 응용하고 있습니다.
+                    <br>
+                    <br>
+                    <a href="#" style="color: #0f4a99; float: right; border-bottom: 1px solid #0f4a99;">더 보기 ></a>
+                    <br>
+                  </div>
+                </article>
+              </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                우39660) 경상북도 김천시 혁신2로 40 (율곡동 790) 한국건설관리공사 | 대표전화 (054)810-0700 
+                <br>
+                Copyright2015 ⓒ KCM All rights reserved.
+                <br>
+                <br>
+                <a href="#">개인정보처리방침</a> | <a href="#">이메일주소무단수집거부</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
