@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>(주)한화/기계</title>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="./index.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .header {
+            grid-area: header;
+            background-color: cornflowerblue;
+        }
+        .footer {
+            grid-area: footer;
+            background-color: #e7e7e7;
+        }
+        .main {
+            grid-area: main;
+            background-color: #fff;
+        }
+        .left {
+            grid-area: navigation;
+            background-color: #fff;
+        }
+        
+        
+        
+        
+        
+        .container {
+            display: grid;
+            grid-template-areas: "navigation header header header"
+                                 "navigation main main main"
+                                 "navigation main main main"
+                                 "footer footer footer footer";
+            grid-template-columns: 150px 1fr 150px;
+            grid-template-rows: 100px
+                                1fr
+                                30px;
+            min-height: 100vh;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .container {
+                grid-template-areas: "header"
+                                     "navigation"
+                                     "main"
+                                     "footer";
+                grid-template-columns: 100%;
+                grid-template-rows: 100px
+                                    50px
+                                    1fr
+                                    50px
+                                    30px;
+            }
+        }
+        
+    </style>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        a {
+            text-decoration: none;
+        }
+        li, ul {
+            list-style: none;
+        }
+        img {
+            border: 0;
+        }
+        
+        /*헤더*/
+        .header {
+            display: block;
+            height: 200px;
+            background-image: url(./img/vs1.png);
+        }
+        
+        
+        
+        /*메인*/
+        .main {
+            margin-top: 100px;
+            margin-left: 100px;
+            border-left: 1px solid #fbb584;
+        }
+        .tit {
+            font-size: 5em;
+            color: #f37524;
+            text-align: center;
+            margin-top: 2%;
+        }
+        .sTit {
+            text-align: center;
+        }
+        .con {
+            display: block;
+            margin: 0 auto;
+            margin-top: 5%;
+            width: 65%;
+        }
+        .wrap ul {
+            width: 613px;
+            margin: -18.2% auto;
+        }
+        .wrap ul li {
+            float: left;
+        }
+        .wrap ul li a {
+            color: #000;
+            margin-right: 50px;
+            position: relative;
+            transition: 0.15s;
+        }
+        .wrap ul li a:hover {
+            color: #f37524;
+        }
+        
+        
+        
+        /*메뉴*/
+        .left {
+            display: block;
+            width: 250px;
+        }
+        .logo {
+            width: 60%;
+            margin-left: 18%;
+            margin-top: 10%;
+        }
+        .menuBox {
+            margin-top: 65%;
+        }
+        
+        .menuList li {
+            line-height: 65px;
+            cursor: pointer;
+        }
+        .menuList li p {
+            font-size: 1.1em;
+            margin-left: 20%;
+        }
+        .menuList li p.on {
+            color: #f37524;
+        }
+        .menuList li p:hover {
+            color: #f37524;
+        }
+        
+        .subList {
+            display: none;
+        }
+        .subList li {
+            font-size: 0.9em;
+            font-weight: lighter;
+            line-height: 35px;
+            margin-left: 32%;
+        }
+        .subList li:hover {
+            border-bottom: 1px solid #f37524;
+        }
+        .subList li a {
+            color: #000;
+        }
+        
+        
+        /*ft*/
+        .footer {
+            height: 50px;
+        }
+        .footer p {
+            text-align: center;
+            font-size: 0.8em;
+            margin-top: 15.5px;
+            color:#999;
+        }
+        
+        
+        
+        
+        @media screen and (min-width:768px) and (max-width:959px) {
+            
+        }
+        
+        @media screen and (max-width:767px) {
+            .left {
+                width: 100%;
+            }
+            .menuBox {
+                display: none;
+            }
+        }
+    </style>
+    
+</head>
+<body class="container">
+    <header class="header"></header>
+    <main class="main">
+        <div class="wrap">
+            <h1 class="tit">MACHINERY</h1>
+            <p class="sTit">
+                (주)한화/기계는 반세기가 넘게 축적한 노하우와 기술력을 바탕으로 글로벌 기계설비 산업을 이끌고 있습니다.
+                <br>끊임없는 연구개발과 혁신으로 고객의 삶 속에 편안함을 제공하겠습니다.
+            </p>
+            <img src="./img/con1.png" alt="img" class="con">
+            <ul>
+                <li><a href="#">공작기계</a></li>
+                <li><a href="#">항공</a></li>
+                <li><a href="#">솔라</a></li>
+                <li><a href="#">자동화</a></li>
+                <li><a href="#">파워트레인</a></li>
+                <li><a href="#">플렌트 기계</a></li>
+            </ul>
+        </div>
+    </main>
+    <aside class="left">
+        <div class="top">
+            <a href="#"><img src="./img/logo-2.png" alt="logo" class="logo"></a>
+        </div>
+        <div class="menuBox">
+            <ul class="menuList">
+                <li>
+                    <p>부문소개</p>
+                    <ul class="subList">
+                        <li><a href="#">사업개요 및 비전</a></li>
+                        <li><a href="#">연혁</a></li>
+                        <li><a href="#">사업장 정보</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <p>사업분야</p>
+                    <ul class="subList">
+                        <li><a href="#">공작기계</a></li>
+                        <li><a href="#">항공</a></li>
+                        <li><a href="#">솔라</a></li>
+                        <li><a href="#">자동화</a></li>
+                        <li><a href="#">파워트레인</a></li>
+                        <li><a href="#">플랜트기계</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <p>지속가능경영</p>
+                    <ul class="subList">
+                        <li><a href="#">연구소</a></li>
+                        <li><a href="#">안전보건환경경영</a></li>
+                        <li><a href="#">품질경영</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <p>고객센터</p>
+                    <ul class="subList">
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">문의하기</a></li>
+                        <li><a href="#">A/S센터</a></li>
+                        <li><a href="#">제품별 상세 설명</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <footer class="footer">
+        <p>
+            copyright ⓒ 2016 Hanwha Corparation ALL rights reserved
+        </p>
+    </footer>
+</body>
+</html>
