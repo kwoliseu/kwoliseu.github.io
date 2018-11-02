@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>횡성 한우 홈페이지에 오신 것을 환영합니다.</title>
+    
+    <!--[if lt IE 9]>
+	    <script src="bower_components/html5shiv/dist/html5shiv.js">
+	    </script>
+    <![endif]-->
+    
+    <script src=""></script>
+    <link rel="stylesheet" href="fonts.css">
+    
+    <style>
+    /* 초기화 부분 */
+     * {margin:0; padding:0;}
+    body, html {font-family: 'nns''Noto Sans KR', sans-serif; width:100%; height:100%;}
+    .wrap {width:100%; height:100%;}
+     ul {list-style:none;}
+      a {text-decoration:none;}
+     img {border:0;}
+        
+    /* 공통 서식 부분 */
+    .pg {width:100%; height:100%; clear:both;}
+    .pgWrap {width:1200px; margin:0 auto;}
+    .left {float:left;}
+    .right {float:right;}
+    .raIt {display:none;}
+    .grid {clear:both; width:1200px; height:554px; margin:0 auto; color:#fff;}
+    .col {float:left; width:600px; height:554px; position:relative;}
+    .box {float:left; width:300px; height:277px; position:relative;}
+    
+    
+        
+    .noti {width:40%; float:left; padding:5%; padding-bottom:0; background-position:10% 165px; background-repeat:no-repeat;}
+    .secTit {font-size:1.8em; color:#444; font-weight:400; line-height:100px; width:90%; float:left;}
+    .more2 {display:block; width:26px; height:26px; background-image:url(./img/main_3_plus.png); float:right; margin-top:40px;}
+    
+        
+        
+        
+        
+        
+    /* 헤더 부분 영역 */
+    .hd {width:100%; position:relative; z-index:40;}
+    .hdwrap {width:1200px; margin:10px auto; clear:both; position:relative; padding:15px;}
+    .top li {float:left;}
+    .top li a {color:#333; padding:10px; font-size:0.74em; text-shadow:1px 1px 0.5px #fff;}
+    .logo {clear:both; float:left;}
+    
+        
+        
+    /* 네비게이션바 영역 */        
+    .gnb {float:left; margin-left:90px;}
+    .gnb ul li {float:left; padding:40px;}
+    .gnb ul li a {color:#333; display:block; line-height:50px; font-size:1.2em; text-shadow:1px 1px 0.5px #fff;}
+    .gnb li.menu > a:after {content:" "; display:block; width:auto; }
+    .sub {display:none; width:1200px; position:absolute; left:0; z-index:15; height:auto; background-color:#fff;}
+    .gnb ul li:hover .sub {display:block;}
+    .sub ul li a {width:285px; clear:both;}
+    .sub .left .menuTit:befor {content:" "; display:block; width:80px; height:5px; background-color:#03c;}
+        
+        
+    /* 컬랩시블 메뉴 영역 */    /*메인 메뉴 옆 선3개 아이콘 눌렀을때 나오는 창*/ /*
+    #collapse {display:none;}
+    #ck {display:none;}
+    .lstBtn {direction:block; width:50px; height:50px; float:right; padding-top:10px; margin-top:15px; cursor:pointer;}
+    .lstBtn .line {display:block; width:28px; margin-left:11px; height:3px; margin-top:6px; background:#fff; transition:0.5s;}
+    .lstBtn .line:nth-child(2) {width:18px;}
+    .lstBtn:hover .ine:nth-child(2) {width:28px;}
+    #ck:checked ~ #collapse {display:block; position:absolute; left:25px; z-index:20; height:auto; background:url("");}
+    #collapse li {line-height:40px; padding-left:15px; font-size:0.9em; width:184px; margin-right:1px; border-right:1px solid #eee;}
+    #collapse .collapTit {background:#265b92; color:#fff; font-size:0.7em;}
+    #collapse li a {color:#fff;}
+    #collapse li a:hover {color:#f9f113; text-decoration:underline;}
+    .collapTit h2:before {content:" "; display:block; width:30px; height:4px; border-bottom:3px solid #fff; margin-bottom:5px; padding-top:5px;}
+    #collapse ul {float:left; width:200px; height:100%; background:#2e70b4;}
+    #close {display:block; width:50px; height:50px; position:absolute; bottom:10px; right:30px; background-image:url(""); background-position:center center; cursor:pointer; background-repeat:no-repeat; transition:0.4s; transform:rotate(0deg);}
+    #close:hover {transform:rotate(180deg);}
+        
+    */ /* 나는 이거 메뉴 얼마 없어서 안넣엇다! */
+        
+        
+        
+    /* 콘텐츠 영역 부분 */
+        
+    
+        
+    /* 그리드 */    
+    #con2 {clear:both; top:490px; position:relative; z-index:20; }
+    #box11 {background-color:#974049;}
+    #box12 {background-color:#5d131b;}
+    #box13 {background-color:#c65c67;}
+    #box14 {background-color:#db979e;}
+    #box34 {background-color:#974049; position:absolute; bottom:0; right:0;}
+    #box41 {background-color:#db979e;}
+    #box42 {background-color:#974049;}
+    #box43 {background-color:#5d131b;}
+    #box44 {background-color:#c65c67;}
+    a {color:#fff;}
+    a:hover h1{text-decoration:underline; color:#fff;}
+    a:hover h2{text-decoration:underline; color:#fff;}
+    .col img {position:absolute; margin-top:75px; margin-left:121px; z-index:10;}
+    .imgBox3 img { margin-top:0px; margin-left:0px; }
+    .col h1 {position:absolute; margin-top:156px; margin-left:84px;}
+    #vs2 .banT1, #vs2 .banTCom {margin-top:0px; margin-left:40px;}
+    .col h2 {position:absolute; margin-top:156px; margin-left:71px;}
+    .sImg .cicle1 img {margin-top:100px; margin-left:70px; }
+    #FBox h1 {margin-left:104px;}
+    #FBox #box42 h1 {margin-left:90px;}
+    .sTit {position:absolute; margin-top:12px; margin-left:124px;}
+    
+    
+    #vs1 {background-image:url(./img/main_2_bg1.png)}
+        
+    
+    #vs2 { width:600px; height:554px; overflow:hidden; }
+    #box34 { z-index:26; width:300px; height:277px; overflow:hidden; }
+    .imgBox3 { width:1000%;  height:554px;   margin-left:0; }    
+    .imgBox3 li { float:left; width:600px; height:544px; position:relative; }
+    .imgBox3 .bg { display:block; width:600px; height:554px; position:absolute; z-index:0; left:0; top:-21px; } 
+    .imgBox3 .titBox { position:absolute; width:600px; height:544px; z-index:25; left: 0; top: 0; }
+    .banT1, .banTCom {color: #fff; text-shadow:2px 2px 3px #333;}
+    #vs2 .banT1 {margin-top:50px;}
+    #vs2 .banTCom {margin-top: 100px;}    
+    .imgBox3 { width:1000%; height:277px; margin-left:0; transition:0.4s; }
+    .imgBox3 li { float:left; width: 600px; height:277px; position:relative; }
+    .imgBox3 .boxTit { padding-top:0px; }
+    .btnBox2 { width:1000%; height:40px; position: absolute;}
+    .btnBox2 li { float:left; width:300px; height:40px; position:relative; }
+    .btnBox2 li label { display:block; width:18px; height:35px; position:absolute; z-index:27; top:150px; background-size:18px 35px; cursor:pointer; }
+    .btnBox2 li label.left {background-image:url("./img/main_2_3_btn1.png"); left:15px;}
+    .btnBox2 li label.right {background-image:url("./img/main_2_3_btn2.png"); right:15px;}
+    .cicle1 { width:144px; height:144px; border-radius:78px; overflow:hidden; margin:30px auto; }
+    
+       
+    .sImg {transition:0.5s; position:relative;}
+    .sImg li {float:left; width:300px; height:277px;}
+    .sImg .imgFrame {display:block; width:120px; height:120px; border-radius:62px; overflow:hidden; margin:30px auto;}
+    .sTit {color:#fff; text-align:center; line-height:3;}
+    .sTit:after {content:" "; display:block; width:40px; height:1px; border-bottom:2px solid #fff; margin:5px auto;}
+        
+    
+    #ra21:checked ~ .imgBox3 { margin-left:0; }
+    #ra22:checked ~ .imgBox3 { margin-left:-100%; }
+    #ra23:checked ~ .imgBox3 { margin-left:-200%; }        
+    #ra21:checked ~ #box34 .btnBox2 { margin-left:0; }
+    #ra22:checked ~ #box34 .btnBox2 { margin-left:-100%; }
+    #ra23:checked ~ #box34 .btnBox2 { margin-left:-200%; }
+    #ra21:checked ~ #box34 .imgBox3 { margin-left:0; }
+    #ra22:checked ~ #box34 .imgBox3 { margin-left:-100%; }
+    #ra23:checked ~ #box34 .imgBox3 { margin-left:-200%; }
+    #ra21:checked ~ #box34 .sImg { margin-left:0; }
+    #ra22:checked ~ #box34 .sImg { margin-left:-100%; }
+    #ra23:checked ~ #box34 .sImg { margin-left:-200%; }
+    
+        
+        
+    /* 비주얼 배너 부분 */
+    #con1 {width:1920px; height:859px; top:0px; position:absolute; left:0; overflow:hidden;}
+    #con1 .imgBox {clear:both; width:300%; height:100%; margin-left:0; transition:0.8s;}
+    #con1 li {width:33.333%; float:left; height:100%; background-repeat:no-repeat; background-position:center top; position:relative;}
+    #con1 .item1 {background-image:url("./img/main_1_bg1.png")}
+    #con1 .item2 {background-image:url("./img/main_1_bg2.png")}
+    #con1 .item3 {background-image:url("./img/main_1_bg3.png")}
+    #con1 .banTit {color:#fff; padding-top:23%; text-align:center; font-size:1.8em; text-shadow:2px 2px 2px #000;}
+    #con1 .detail {display:block; width:120px; line-height:32px; text-align:center; color:#fff; background:rgba(51,6,11,0.8); left:46.7%; border:1px solid #fff; position:absolute; z-index:10; margin-top:4%;}
+    #con1 .upBox {width:100%; height:100%; position:absolute; top:0; z-index:2; left:0; text-align:center; padding-top:13%;}
+    #con1 .upBox .ty {display:block; height:auto; float:left; margin-left:38%;}
+    #con1 .btnBox {position:absolute; z-index:21; left:calc(calc(100% - 1200px) / 2); top:calc(100% - 300px); height:15px;}
+    #con1 .btnBox li {float:left; width:20px; height:20px; margin-right:6px;}
+    #con1 .btnBox li button, #con1 .btnBox li label {outline:0; border:0; background-color:transparent; display:block; background-repeat:no-repeat; width:30px; height:30px; cursor:pointer; background-position:center center; margin-top:2px;}
+    .playBtn {background-image:url("./img/btn_play2.png");}
+    .stopBtn {background-image:url("./img/btn_stop2.png");}
+    #con1 .btnBox li label {width:30px; height:30px; background-image:url("./img/btn_off2.png"); margin-top:0;}
+        
+    #ra1:checked ~ .btnBox .item1 {background-image: url("./img/btn_on2.png");}
+    #ra2:checked ~ .btnBox .item2 {background-image: url("./img/btn_on2.png");}
+    #ra3:checked ~ .btnBox .item3 {background-image: url("./img/btn_on2.png");}
+        
+    #ra1:checked ~ .imgBox {margin-left:0;}
+    #ra2:checked ~ .imgBox {margin-left:-100%;}
+    #ra3:checked ~ .imgBox {margin-left:-200%;}
+        
+    
+        
+        
+    /* con3 */
+        
+    #con3 {background-image:url(./img/main_3_bg.png); background-position:center top; height:50%; margin-top:29%;}
+    #news {background-image:url(./img/news_icon.png); background-position:68px 180px;}
+    #Faq {background-image:url(./img/faq_icon.png); background-position:60px 180px;}
+    .notiTit {clear:both; display:block; font-weight:600; margin-bottom:10px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; padding-left:60px; font-size:20px; color:#333;}
+    .notiCom {color:#444; overflow:hidden; text-overflow:ellipsis; padding-left:60px; }
+    .notiline {border:0; outline:0; height:1px; background:#666; margin-top:16px;}
+    .lsBox li {margin-top:16px; padding-left:10px; clear:both; overflow:hidden;}
+    .lsBox li:hover a, .lsBox li:hover span { text-decoration:underline;}
+    .lstTit {color:#555; display:block;  text-overflow:ellipsis; overflow:hidden; white-space:nowrap; width:80%; float:left; font-size:0.9em;}
+    .lsBox li span {color:#555; font-size:0.9em; float:right; padding-right:10px;}
+        
+        
+    /* con4 */
+    #con4 {background-image:url(./img/main_3_bg.png); background-position:center top; height:55%; margin-top:0%;}
+    .slBox {clear:both; width:1200px; margin:0 auto; padding-top:60px; position:relative;}
+    .ctBox {background:#f0838c; width:250px; height:306px; position:absolute; top:-10px; left:0;}
+    .rtBox {width:950px; float:right; height:316px; background:#fce7e9; padding-left:100px; overflow:hidden;}
+    .lstBox {width:2000px; height:auto;}
+    .rtBox li {float:left; width:320px; margin-top:32px;}
+    .rtBox li:hover img {top:-15px; left:-15px; width:110%; height:110%;}
+    .proTit {text-align:center; padding-top:42%; color:#fff; font-size:2em;}
+    .thumBox {position:relative; width:240px; height:180px; overflow:hidden; cursor:pointer; margin:0 auto;}
+    .thumBox img {display:block; width:100%; height:100%; position:absolute; top:0; left:0; transition:0.4s; transition:0.4s;}
+    .thumBox:hover img { top:-15px; left:-15px; width:110%; height:110%;}
+    .itemTit {margin-top:20px; text-align:center; color:#444; cursor:pointer;}
+    .itemDate {margin-top:10px; text-align:center; font-size:0.9em; cursor:pointer;}
+    .ctBline {border:0; outline:0; height:1px; background:#fff;}
+        
+    .proTit:before {content:" "; display:block; width:150px; height:1px; border-bottom:2px solid #fff; margin:0 auto;}
+    .proTit:after {content:" "; display:block; width:150px; height:1px; border-bottom:2px solid #fff; margin:8px auto;}
+        
+    /* ft */
+    #ft {background-color:#33060b;}
+    .ft_wrap {width:1200px; height:120px; margin:0 auto; position:relative;}
+    #fnb {width:750px; margin:0 auto;}
+    #fnb li {float:left; padding:15px;}
+    #fnb a {color:#fff; font-size:0.8em;}
+    .copyright {clear:both; color:#fff; font-size:0.8em; text-align:center;}
+    .wa {position:absolute; left:0; top:10px;}
+    .wa img {margin-bottom:20px;}
+        
+    </style>
+    
+</head>
+<body>   
+    <div class="wrap">
+        <header class="hd">
+           <nav class="top">
+            <div class="hdwrap">
+                <ul class="right">
+                    <li><a href="">로그인</a></li>
+                    <li><a href="">회원가입</a></li>
+                </ul>
+            </div>
+           </nav>
+            <div class="hdwrap">
+                <a href="index.html" class="logo">
+                    <img src="./img/logo.png" alt="로고">
+                </a>
+                <nav class="gnb">
+                    <ul>
+                        <li class="menuItem1">
+                            <a href="">횡성 한우</a>
+                            <div class="sub">
+                                <ul>
+                                    <li class="subTit"><a href="">횡성 한우 소개</a></li>
+                                </ul>
+                                <ul>
+                                    <li class="subTit"><a href="">수상 실적</a></li>
+                                </ul>
+                                <ul>
+                                    <li class="subTit"><a href="">횡성 한우 레시피</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="menuItem2">
+                            <a href="">횡성 한우 축제</a>
+                            <div class="sub">
+                                <ul>
+                                    <li class="subTit"><a href="">축제 소개</a></li>
+                                </ul>
+                                <ul>
+                                    <li class="subTit"><a href="">축제 일정</a></li>
+                                </ul>
+                                <ul>
+                                    <li class="subTit"><a href="">축제 안내도</a></li>
+                                </ul>
+                                <ul>
+                                    <li class="subTit"><a href="">축제 풍경</a></li>
+                                </ul>
+                                <ul>
+                                    <li class="subTit"><a href="">찾아오시는 길</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="menuItem3">
+                            <a href="">횡성 사거리</a>
+                            <div class="sub">
+                                <ul>
+                                    <li class="subTit"><a href="">볼거리</a></li>
+                                </ul>
+                                <ul>
+                                    <li class="subTit"><a href="">먹거리</a></li>
+                                </ul>
+                                <ul>
+                                    <li class="subTit"><a href="">즐길거리</a></li>
+                                </ul>
+                                <ul>
+                                    <li class="subTit"><a href="">쉴거리</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="menuItem4">
+                            <a href="">커뮤니티</a>
+                            <div class="sub">
+                                <ul>
+                                    <li class="subTit"><a href="">공지사항</a></li>
+                                </ul>
+                                <ul>
+                                    <li class="subTit"><a href="">FAQ</a></li>
+                                </ul>
+                                <ul>
+                                    <li class="subTit"><a href="">후기</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section id="con1" class="pg">
+            <input type="radio" name="rdo1" class="raIt" id="ra1" checked>
+            <input type="radio" name="rdo1" class="raIt" id="ra2">
+            <input type="radio" name="rdo1" class="raIt" id="ra3">
+            <ul class="imgBox">
+                <li class="item1">
+                    <h2 class="banTit">맛있습니다</h2>
+                    <a href="" class="detail">바로가기</a>
+                </li>
+                <li class="item2">
+                    <h2 class="banTit">우수합니다</h2>
+                    <a href="" class="detail">바로가기</a>
+                </li>
+                <li class="item3">
+                    <h2 class="banTit">건강합니다</h2>
+                    <a href="" class="detail">바로가기</a>
+                </li>
+            </ul>
+            <div class="upBox">
+                <img src="./img/main_tit.png" alt="횡성한우는" class="ty">
+            </div>
+            <ul class="btnBox">
+                <li><button class="playBtn"></button></li>
+                <li><button class="stopBtn"></button></li>
+                <li><label for="ra1" class="slBtn item1" data-val="0"></label></li>
+                <li><label for="ra2" class="slBtn item2" data-val="1"></label></li>
+                <li><label for="ra3" class="slBtn item3" data-val="2"></label></li>
+            </ul>
+        </section>
+        <secton id="con2" class="pg">
+             <div class="grid">
+                  <div class="col left">
+                    <div class="box" id="box11">
+                        <ul>
+                            <a href="">
+                                <img src="./img/main_2_icon1.png" alt="">
+                                <h1 class="boxTit">횡성 한우</h1>
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="box" id="box12">
+                        <ul>
+                            <a href="">
+                                <img src="./img/main_2_icon2.png" alt="">
+                                <h1 class="boxTit">축제 소개</h1>
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="box" id="box13">
+                        <ul>
+                            <a href="">
+                                <img src="./img/main_2_icon3.png" alt="">
+                                <h1 class="boxTit">축제 안내</h1>
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="box" id="box14">
+                        <ul>
+                            <a href="">
+                                <img src="./img/main_2_icon4.png" alt="">
+                                <h2 class="boxTit">찾아오시는 길</h2>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col right" id="vs1">                
+                </div>                
+            </div>
+            <div class="grid">
+                <div class="col left" id="vs2">
+                       <input type="radio" name="rdo2" id="ra21" class="raItem" checked>
+                       <input type="radio" name="rdo2" id="ra22" class="raItem">
+                       <input type="radio" name="rdo2" id="ra23" class="raItem">
+                        <ul class="imgBox3">
+                            <li class="item1">
+                                <img src="./img/main_2_bg4.png" class="bg" alt="불고기">
+                                <h1 class="banT1">맛있는 한우요리</h1>
+                                <h2 class="banTCom">한우 불고기</h2>
+                                <a href="" class="more"></a>
+                            </li>
+                            <li class="item2">
+                                <img src="./img/main_2_bg5.png" class="bg" alt="갈비탕">
+                                <h1 class="banT1">맛있는 한우요리</h1>
+                                <h2 class="banTCom">한우 갈비탕</h2>
+                                <a href="" class="more"></a>
+                            </li>
+                            <li class="item3">
+                                <img src="./img/main_2_bg6.png" class="bg" alt="육회 비빔밥">
+                                <h1 class="banT1">맛있는 한우요리</h1>
+                                <h2 class="banTCom">한우 육회 비빔밥</h2>
+                                <a href="" class="more"></a>
+                            </li>
+                        </ul>
+                    <div class="box" id="box34">
+                        <ul class="sImg">
+                            <li class="item1">
+                                <h3 class="sTit">우둔살</h3>
+                                <span class="cicle1">
+                                    <img src="./img/main_2_31_2.png" alt="">
+                                </span>
+                            </li>
+                            <li class="item2">
+                                <h3 class="sTit">갈비살</h3>
+                                <span class="cicle1">
+                                    <img src="./img/main_2_32_2.png" alt="">
+                                </span>
+                            </li>
+                            <li class="item3">
+                                <h3 class="sTit">양지살</h3>
+                                <span class="cicle1">
+                                    <img src="./img/main_2_33_2.png" alt="">
+                                </span>
+                            </li>
+                        </ul>
+                        <ul class="btnBox2">
+                            <li class="item1">
+                                <label for="ra23" class="slBtn left"></label>
+                                <label for="ra22" class="slBtn right"></label>
+                            </li>
+                            <li class="item2">
+                                <label for="ra21" class="slBtn left"></label>
+                                <label for="ra23" class="slBtn right"></label>
+                            </li>
+                            <li class="item3">
+                                <label for="ra22" class="slBtn left"></label>
+                                <label for="ra21" class="slBtn right"></label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col right" id="FBox">
+                    <div class="box" id="box41">
+                        <ul>
+                            <a href="">
+                                <img src="./img/main_2_icon5.png" alt="">
+                                <h1 class="boxTit">볼거리</h1>
+                            </a>
+                        </ul>
+                        </div>
+                    <div class="box" id="box42">
+                        <ul>
+                            <a href="">
+                                <img src="./img/main_2_icon6.png" alt="">
+                                <h1 class="boxTit">즐길거리</h1>
+                            </a>
+                        </ul>
+                            </div>
+                    <div class="box" id="box43">
+                        <ul>
+                            <a href="">
+                                <img src="./img/main_2_icon7.png" alt="">
+                                <h1 class="boxTit">먹거리</h1>
+                            </a>
+                        </ul>
+                            </div>
+                    <div class="box" id="box44">
+                        <ul>
+                            <a href="">
+                                <img src="./img/main_2_icon8.png" alt="">
+                                <h1 class="boxTit">쉴거리</h1>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </secton>
+        <section id="con3" class="pg">
+           <div class="pgWrap">
+            <div class="noti" id="news">
+                <h2 class="secTit">공지사항</h2>
+                <a href="" class="more2"></a>
+                <h3 class="notiTit">횡성한우축제 발전을 위한 공청회 개최</h3>
+                <p class="notiCom">횡성 한우 축제의 발전을 위한 공청회가 열리게 되었습니다. 자세한 사항은 게시글을 확인해 주십시오. </p>
+                <hr class="notiline">
+                <ul class="lsBox">
+                    <li>
+                        <a href="" class="lstTit">2018 제14회 횡성한우축제 일정 공지</a>
+                        <span class="date">2018-05-06</span>
+                    </li>
+                    <li>
+                        <a href="" class="lstTit">2018 제14회 횡성한우축제 최종 부스배치도횡성문화재단 청소년문화예술교육프로그램 "뮤지컬Go!Go!Go!" 참가자 모집 공고</a>
+                        <span class="date">2018-04-21</span>
+                    </li>
+                    <li>
+                        <a href="" class="lstTit">횡성문화재단 청소년문화예술교육프로그램 "뮤지컬Go!Go!Go!" 참가자 모집 공고</a>
+                        <span class="date">2018-04-16</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="noti" id="Faq">
+                <h2 class="secTit">FAQ</h2>
+                <a href="" class="more2"></a>
+                <h3 class="notiTit">자주 하는 질문</h3>
+                <p class="notiCom">자주 물어보는 질문들을 모아둔 리스트입니다.<br/>그밖의 질문 및 문의는 FAQ게시판에 작성해주세요.</p>
+                <hr class="notiline">
+                <ul class="lsBox">
+                    <li>
+                        <a href="" class="lstTit">축제 안내판 설치해주세요</a>
+                        <span class="date">2018-05-28</span>
+                    </li>
+                    <li>
+                        <a href="" class="lstTit">한우 축제 관련 문의</a>
+                        <span class="date">2018-05-21</span>
+                    </li>
+                    <li>
+                        <a href="" class="lstTit">한우 축제 주차는 어디서 하나요?</a>
+                        <span class="date">2018-05-16</span>
+                    </li>
+                </ul>
+            </div>
+         </div>
+        </section>
+        <section id="con4" class="pg">
+            <div class="pgWrap">
+                <div class="slBox">
+                    <div class="ctBox">
+                        <h2 class="proTit">횡성<br/>둘러보기</h2>
+                    </div>
+                    <div class="rtBox">
+                        <ul class="lstBox">
+                            <li>
+                                <div class="thumBox">
+                                    <img src="./img/main_3_hw1.png" alt="이색체험 한우농장 방문">
+                                </div>
+                                <h3 class="itemTit">이색체험 한우농장 방문</h3>
+                                <p class="itemDate">2018-05-21</p>
+                            </li>
+                            <li>
+                                <div class="thumBox">
+                                    <img src="./img/main_3_hw2.png" alt="천문대 후기">
+                                </div>
+                                <h3 class="itemTit">천문대 후기</h3>
+                                <p class="itemDate">2018-05-02</p>
+                            </li>
+                            <li>
+                                <div class="thumBox">
+                                    <img src="./img/main_3_hw3.png" alt="횡성 한우 축제!">
+                                </div>
+                                <h3 class="itemTit">횡성 한우 축제!</h3>
+                                <p class="itemDate">2018-04-26</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <ul class="iconBox">
+                    <li class="ico1"><a href=""></a></li>
+                    <li class="ico1"><a href=""></a></li>
+                    <li class="ico1"><a href=""></a></li>
+                    <li class="ico1"><a href=""></a></li>
+                    <li class="ico1"><a href=""></a></li>
+                    <li class="ico1"><a href=""></a></li>
+                    <li class="ico1"><a href=""></a></li>
+                    <li class="ico1"><a href=""></a></li>
+                    <li class="ico1"><a href=""></a></li>
+                </ul>
+            </div>
+        </section>
+        <footer id="ft">
+            <div class="ft_wrap">
+                <nav id="fnb">
+                    <ul>
+                        <li><a href="">개인정보처리방침</a></li>
+                        <li><a href="">이메일무단수집거부</a></li>
+                        <li><a href="">저작권정책</a></li>
+                        <li><a href="">홈페이지 의견접수</a></li>
+                        <li><a href="">뷰어다운로드</a></li>
+                    </ul>
+                    <p class="copyright">Copyright (C) 2015 Hoengseong County. All rights reserved.</p>
+                </nav>
+                <a href="" class="wa"><img src="./img/ft_logo.png" alt=""></a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
