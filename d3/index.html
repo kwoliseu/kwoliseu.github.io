@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>THE REVE</title>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="./index.js"></script>
+    
+    <style>
+        *{margin:0; padding:0; font-family: 'Nanum Myeongjo', serif;}
+        body, html {width:100%; height:100%;}
+        a {text-decoration:none;}
+        img {border:0;}
+        ul {list-style:none;}
+        li {list-style:none;}
+    </style>
+    
+    <style>
+        .pg {width:100%; height:100%; clear:both;}
+        .hd {width:100%; position:fixed; z-index:40;}
+        .hdwrap {width:1200px; margin:10px auto; clear:both; position:relative; padding:15px;}
+        .hdleft {display:block; position:absolute; margin:2% 10%}
+        .hdright {float:right; position:relative; right:10%; padding-top:4%;}
+        .hdright li {float:left;}
+        .hdright li a {color:#fff; padding:15px; font-size:1.2em; text-shadow:1px 1px 0.5px #66903e;}
+        #collapMenu {width:36%; height:80%; position:fixed; z-index:1000; top:0; left:-110%; background:#fff; transition:0.8s;}
+        #ck1:checked ~ #collapMenu {left:0%;}
+        .opener {display:inline-block; cursor:pointer; width:73px; height:73px; background:url(./img/MainBtn1.png);}
+        .logo.w {margin-left:20px;}
+        .close {cursor:pointer; position:absolute; top:6%; left:28%;}
+        .logo.g {position:absolute; top:6%; left:42%;}
+        
+        .colMenu {position:absolute; top:26%; left:30%; font-size:1.4em;}
+        .colMenu li {padding-top:16%;}
+        .colMenu li a {color:#666}
+        .colMenu li a:hover {color:#66903e;}
+    </style>
+    
+    <style>
+        #con1 {width:100%; height:100%; top:0px; position:absolute; left:0; overflow:hidden;}
+        #con1 .pageWrap {width:100%; height:100%;}
+        #con1 .imgBox {width:400%; height:100%; clear:both; transition:0.8s; margin-left:0;}
+        #con1 .imgBox li {width:25%; height:100%; float:left;}
+        #con1 .item1 {background-image:url("./img/con1_bg1_1.png"); background-repeat:no-repeat; background-size:100% 100%;}
+        #con1 .item2 {background-image:url("./img/con1_bg2_3.png"); background-repeat:no-repeat; background-size:100% 100%;}
+        #con1 .item3 {background-image:url("./img/con1_bg3_1.png"); background-repeat:no-repeat; background-size:100% 100%;}
+        .item1 img {top:500px;}
+        .M01Btn {display: none;}
+        .M01Btn li {position:absolute; top:50%; }
+        .M01Btn .lBtn {left:0; padding-left:7%;}
+        .M01Btn .rBtn {right:0; padding-right:7%;}
+        button {border:0; background:0;}
+        button img {cursor:pointer;}
+        .item1 img {position:absolute; top:40%; padding-left:calc(calc(100% - 948px) / 2);}
+        .item2 img {position:absolute; top:40%; padding-left: 15%;}
+        .item3 img {position:absolute; top:40%; padding-left: 59%;}
+        #con1  .Viewmore {display:block; width:120px; line-height:32px; text-align:center; color:#fff; background:rgba(44,56,17,0.3); border:1px solid #fff; position:absolute; z-index:50;}
+        #con1 .item1 .Viewmore {margin-left:47%; margin-top:33%;}
+        #con1 .item2 .Viewmore {margin-left:27%; margin-top:28%;}
+        #con1 .item3 .Viewmore {margin-left:69.5%; margin-top:32%;}
+        
+        .img img {padding-right:60px;}
+        
+        #con1 .M01Ra li button, #con1 .M01Ra li label {outline:0; border:0; background-color:transparent; display:block; background-repeat:no-repeat; width:30px; height:30px; cursor:pointer; background-position:center center; margin-top:2px;}
+        
+        #con1 .M01Ra {position:absolute; z-index:30; bottom:5%; left:47%}
+        #con1 .M01Ra li {float:left;}
+        
+        .playBtn {background-image:url("./img/btn_play.png");}
+        .playBtn:checked ~ .playBtn {background-image:url("./img/btn_stop.png");}
+        #con1 .M01Ra li label {width:30px; height:30px; background-image:url("./img/btn_off.png"); margin-top:0;}
+        
+        #ra5:checked ~ .M01Ra .mainRa5 {background-image: url("./img/btn_on.png");}
+        #ra6:checked ~ .M01Ra .mainRa6 {background-image: url("./img/btn_on.png");}
+        #ra7:checked ~ .M01Ra .mainRa7 {background-image: url("./img/btn_on.png");}
+        
+        #ra5:checked ~ .imgBox {margin-left:0;}
+        #ra6:checked ~ .imgBox {margin-left:-100%;}
+        #ra7:checked ~ .imgBox {margin-left:-200%;}
+        
+        #con1 input {display:none;}
+        
+    </style>
+    
+    <style>
+        #con2 {width:100%; height:100%; margin-top:50.5%; position:absolute; left:0; overflow:hidden; }
+        #con2 .pageWrap {width:100%; height:100%; background:#fff;}
+        #con2 .lst1 {width:1325px; height:627px; margin:12% auto;}
+        #con2 .lit1 {width:400%; height:100%; margin-left:0; transition:0.8s;}
+        #con2 .lit1 ul {float:left; width:25%; height:100%;}
+        #con2 .lit1 ul li {float:left;}
+        #con2 .list02 {margin-left:10%;}
+        #con2 .list03 {margin-left:10%;}
+        #con2 .lit ul .text {margin-left:50px;}
+        .tTit {font-size:1.4em; color:#66903e; margin-bottom:70px; margin-top:20px;}
+        .tMain {font-size:3em; margin-bottom:50px;}
+        .tSub {font-size:0.9em; margin-bottom:10px; margin-left:60px;}
+        .tMore {margin-left:60px; color:#66903e; font-size:1.2em; border-bottom:1px solid #66903e;}
+        
+        #con2 .M02Ra {position:absolute; z-index:50; bottom:8%; left:48%; width:200px; height:15px;}
+        #con2 .M02Ra li {float:left; padding:8px;}
+        #con2 .M02Ra li label {width:14px; height:14px; background-image:url("./img/btn2_off.png"); margin-top:0; float:left;}
+        
+        #ra11:checked ~ .M02Ra .mainRa11 {background-image: url("./img/btn2_on.png");}
+        #ra12:checked ~ .M02Ra .mainRa12 {background-image: url("./img/btn2_on.png");}
+        #ra13:checked ~ .M02Ra .mainRa13 {background-image: url("./img/btn2_on.png");}
+        
+        #ra11:checked ~ .lit1 {margin-left:0;}
+        #ra12:checked ~ .lit1 {margin-left:-140%;}
+        #ra13:checked ~ .lit1 {margin-left:-280%;}
+        
+        #con2 input {display:none;}
+        
+        .01list {display:none;}
+    </style>
+    
+    <style>
+        #con3 {width:100%; height:100%; margin-top:106%; position:relative; left:0;}
+        #con3 .pageWrap {width:100%; height:360px;}
+        #con3 .pageWrap .banner { width:100%; height:100%; background:url("./img/con3_bg3.jpg"); background-size:100% auto; background-position:center; background-attachment:fixed; text-align:center; color:#fff;}
+        .banner h1 {padding-top:40px; font-size:100px;}
+        .banner p {font-size:30px; padding-bottom:30px;}
+    </style>
+    
+    <style>
+        #con4 {width:100%; height:100%; margin-top:5%; position:relative; left:0; position:absolute; background-image:url()}
+        #con4 .pageWrap {width:100%; height:100%; }
+        .lis2 {width:1483px; height:657px; background:#fff; margin:201.5px auto;}
+        .left {width:392px; height:657px; position:absolute;}
+        .left li {width:382px; height:154px; padding:5px; cursor:pointer;}
+        .left li p {position:relative; margin-left:171px; margin-top:-95px; font-size:1.4em; }
+        .right {position:absolute; width:1091px; height:657px; margin-left:392px; z-index:1;}
+        .right ul {position:absolute; transition:0.5s;}
+        .right ul li, .right ul img {float:left;}
+        .right ul img {margin-right:65px;}
+        .right ul li {margin-top:305px; margin-left:102px;}
+        .M04Tit {position:absolute; font-size:1.4em; margin-top:-43px;}
+        .M04Stit {font-size:0.9em;}
+        .M04More {position:absolute; padding-top:50px; color:#33903e; border-bottom:1px solid #66903e;}
+        
+        .M04Main {position:absolute; margin-left:1030px; margin-top:20px; color:#66903e; font-size:1.4em;}
+        .M04Sub {position:absolute; margin-left:1030px; margin-top:65px; font-size:4em;}
+        .line {position:absolute; margin-left:925px; margin-top:278px;}
+        
+        .leftBtn.on {background-color:#66903e;}
+        .leftBtn p.on {color:#fff; font-size:1.8em;}
+        
+        .M04list1 {opacity:0;}
+        .M04list1.on {opacity:1;}
+        .M04list2 {opacity:0;}
+        .M04list2.on {opacity:1;}
+        .M04list3 {opacity:0;}
+        .M04list3.on {opacity:1;}
+        .M04list4 {opacity:0;}
+        .M04list4.on {opacity:1;}
+        
+        
+    </style>
+    
+    <style>
+    
+        #footer {
+            width: 100%;
+            height: 150px;
+            background-color: #455229;
+            margin-top: 62%;
+            position: absolute;
+        }
+        
+        .ftWrap {            
+            position: absolute;
+            margin: 0 auto;
+        }
+        
+        .footmenu {
+            width: 455px;
+            height: 50px;
+            margin: 0 auto;
+            margin-top:20px;
+        }
+        .footmenu li {
+            float:left;
+            padding:15px;
+        }
+        .footmenu a {
+            color: #fff;
+        }
+        
+        .cp {
+            text-align: center;
+            margin-top: 10px;
+            color: #fff;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+       
+        <header class="hd">
+            <div class="hdWrap">
+                <div class="hdleft">
+                    <label for="ck1" class="opener" ></label>
+                    <a href="" class="logo w">
+                        <img src="./img/logo1.png" alt="">
+                    </a>
+                </div>
+                <ul class="hdright">
+                    <li><a href="">Commitment</a></li>
+                    <li><a href="">기업 사회 공헌</a></li>
+                    <li><a href="">Meet Us</a></li>
+                </ul>
+            </div>
+        </header>
+         <input type="checkbox" id="ck1" class="ckItem">
+        <nav id="collapMenu">
+            <label for="ck1" class="close"><img src="./img/close.png" alt=""></label>
+            <a href="" class="logo g"><img src="./img/logo3.png" alt=""></a>
+            <ul class="colMenu">
+                <li><a href="">About Us</a></li>
+                <li><a href="">기업 사회 공헌</a></li>
+                <li><a href="">브랜드 사회 공헌</a></li>
+                <li><a href="">Beauty inside</a></li>
+                <li><a href="">Meet Us</a></li>
+            </ul>
+        </nav>
+        <ul class="btnBox">
+            <li><label for="ra1"></label></li>
+            <li><label for="ra2"></label></li>
+            <li><label for="ra3"></label></li>
+            <li><label for="ra4"></label></li>
+        </ul>
+        <Section id="con1" class="pg">
+            <div class="pageWrap">
+                <!-- <input type="checkbox" class="ckItem" id="ck2"> -->
+                <input type="radio" name="rdo2" class="raIt" id="ra5" checked>
+                <input type="radio" name="rdo2" class="raIt" id="ra6">
+                <input type="radio" name="rdo2" class="raIt" id="ra7">
+                <ul class="imgBox">
+                    <li class="item1">
+                        <img src="./img/sTit1.png" alt="">
+                        <a href="" class="Viewmore">더 보기</a>
+                    </li>
+                    <li class="item2">
+                        <img src="./img/sTit2.png" alt="">
+                        <a href="" class="Viewmore">더 보기</a>
+                    </li>
+                    <li class="item3">
+                        <img src="./img/sTit3.png" alt="">
+                        <a href="" class="Viewmore">더 보기</a>
+                    </li>
+                </ul>
+                <ul class="M01Ra">
+                    <li><label for="ra5" class="mainRa5"></label></li>
+                    <li><label for="ra6" class="mainRa6"></label></li>
+                    <li><label for="ra7" class="mainRa7"></label></li>
+                </ul>
+                <div class="SImgBox">
+                    <ul>
+                        <li><a href=""><img src="" alt=""></a></li>
+                        <li><a href=""><img src="" alt=""></a></li>
+                        <li><a href=""><img src="" alt=""></a></li>
+                        <li><label for="ra8"></label></li>
+                        <li><label for="ra9"></label></li>
+                        <li><label for="ra10"></label></li>
+                    </ul>
+                </div>
+                <ul class="M01Btn">
+                    <li class="lBtn">
+                       <button>
+                            <img src="./img/con1_btn1.png" alt="">
+                        </button>
+                    </li>
+                    <li class="rBtn">
+                        <button>
+                            <img src="./img/con1_btn2.png" alt="">
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </Section>
+        <Section id="con2" class="pg">
+            <div class="pageWrap">
+                <div class="lst1">
+                    <input type="radio" name="rdo3" class="raIt" id="ra11" checked>
+                    <input type="radio" name="rdo3" class="raIt" id="ra12">
+                    <input type="radio" name="rdo3" class="raIt" id="ra13">
+                    <div class="lit1">
+                        <ul class="list01">
+                            <li class="img"><img src="./img/con2_list1.png" alt=""></li>
+                            <li class="text">
+                                <p class="tTit">SOCIAL CONTRIBUTION</p>
+                                <p class="tMain">남수단<br/>톤스지역에서<br/>벌어지는<br/>희망고 캠페인</p>
+                                <p class="tSub">척박한 아프리카 지역에서 일어난 놀라운 기적</p>
+                                <a href="" class="tMore">더 보기 ></a>
+                            </li>
+                        </ul>
+                    <ul class="list02">
+                        <li class="img"><img src="./img/con2_list2.png" alt=""></li>
+                        <li class="text">
+                            <p class="tTit">BEAUTY INFORMATION</p>
+                            <p class="tMain">당신의<br/>피부는<br/>안녕하십니까?</p>
+                            <p class="tSub">잘못된 세안 습관으로 당신의 피부가 위험하다.</p>
+                            <a href="" class="tMore">더 보기 ></a>
+                        </li>
+                    </ul>
+                    <ul class="list03">
+                        <li class="img"><img src="./img/con2_list3.png" alt=""></li>
+                        <li class="text">
+                            <p class="tTit">THE REVE INFORMATION</p>
+                            <p class="tMain">꽃을 담아<br/>꽃을 피우다</p>
+                            <p class="tSub">화학 첨가물 없이 자연의 꽃에서 추출한 것을 담아<br/>당신의 피부를 꽃피웁니다.</p>
+                            <a href="" class="tMore">더 보기 ></a>
+                        </li>
+                    </ul>
+                    </div>
+                    <ul class="M02Ra">
+                        <li><label for="ra11" class="mainRa11"></label></li>
+                        <li><label for="ra12" class="mainRa12"></label></li>
+                        <li><label for="ra13" class="mainRa13"></label></li>
+                    </ul>
+                </div>
+            </div>
+        </Section>
+        <Section id="con3" class="pg">
+            <div class="pageWrap">
+                <div class="banner">
+                    <h1>THE REVE</h1>
+                    <p>자연의 생명으로 피부를 빛내다</p>
+                    <span>레브는 프랑스어로 꿈이라는 뜻입니다<br/>THE REVE는 피부의 변화를 원하는 고객님의 꿈을 실현시키기 위해 탄생했습니다</span>
+                </div>
+            </div>
+        </Section>
+        <Section id="con4" class="pg">
+            <div class="pageWrap">
+                <div class="lis2">
+                    <ul class="left">
+                        <li class="leftBtn on" id="left01">
+                            <img src="./img/con4_list1.png" alt="">
+                            <p class="on">새살크림</p>
+                        </li>
+                        <li class="leftBtn" id="left02">
+                            <img src="./img/con4_list2.png" alt="">
+                            <p>코코폼</p>
+                        </li>
+                        <li class="leftBtn" id="left03">
+                            <img src="./img/con4_list3.png" alt="">
+                            <p>새살필링</p>
+                        </li>
+                        <li class="leftBtn" id="left04">
+                            <img src="./img/con4_list4.png" alt="">
+                            <p>아줄렌 선베이스</p>
+                        </li>
+                    </ul>
+                    <div class="right">
+                        <ul class="M04list1 on">
+                            <img src="./img/con4_list1_2.png" alt="">
+                            <li class="M04Text">
+                                <p class="M04Tit">새살크림</p>
+                                <p class="M04Stit">고농축 센텔라 성분을 함유한 새살크림<br/>센텔라아시아티카 성분의 피부자생력 케어크림<br/>자극받은 피부의 겉과 속 모두 촉촉하고 산뜻하게!<br/><br/>빠르게 흡수되는 수분감으로 유분기 적은 촉촉한<br/>보습막을 형성해줍니다.<br/><br/>자극으로 인한 성난 피부를 진정시켜<br/>깨끗한 피부로 만들어줍니다.<br/><br/>병풀, 마치현 추출물 함유로 피부의 문제를 해결해<br/>건강한 피부로 가꾸어줍니다.</p>
+                                <a href="" class="M04More">더 보기 ></a>
+                            </li>
+                        </ul>
+                        <ul class="M04list2">
+                            <img src="./img/con4_list2_2.png" alt="">
+                            <li class="M04Text">
+                                <p class="M04Tit">코코폼</p>
+                                <p class="M04Stit">자극 받은 피부에는 '청결한 세안'만이 해답!<br/>깨끗하고 안전하게 세정해주는 저자극 천연유래 지방산<br/>맑고 깨끗한 피부를 위판 촉촉한 저자극 클렌저 코코폼<br/><br/>더레브의 코코폼은 저가의 화학계면활성제를<br/>사용하지 않고 코코넛에서 추출한 지방산으로 만들어<br/>피부 자극이 적습니다.<br/><br/>피부의 노폐물, 피지. 먼지까지 순하게 제거해줍니다.<br/>피부에 생기를 불어넣고 수분을 공급해줍니다.<br/>코코폼은 피부의 노폐물을 제거와 피부 진정에도<br/>도움을 줍니다.</p>
+                                <a href="" class="M04More">더 보기 ></a>
+                            </li>
+                        </ul>
+                        <ul class="M04list3">
+                            <img src="./img/con4_list3_2.png" alt="">
+                            <li class="M04Text">
+                                <p class="M04Tit">새살필링</p>
+                                <p class="M04Stit">저자극 젤타입 필링젤<br/><br/>깨끗하고 매끄러운 피부를 위한<br/>더레브만의 독보적인 배합공법<br/>적은 자극으로 민감성, 예민한 피부도 안전하게<br/>각질을 제거해 촉촉한 피부결 완성!<br/><br/>더레브는 유해성 논란이 있는 파레벤성분 대신<br/>안전한 원료의 배합으로 방부효과를 냅니다.<br/><br/>또한 10가지 비타민유도체와 3가지 이상의<br/>천연오일, 병풀, 녹차, 감초등<br/>안전한 천연원료를 배합합니다.</p>
+                                <a href="" class="M04More">더 보기 ></a>
+                            </li>
+                        </ul>
+                        <ul class="M04list4">
+                        <img src="./img/con4_list4_2.png" alt="">
+                        <li class="M04Text">
+                            <p class="M04Tit">아줄렌 선베이스</p>
+                            <p class="M04Stit">365일 산뜻한 데일리 선크림. 자외선 차단과<br/>자연스러운 톤업을 동시에!<br/>피부진정에 좋은 아줄렌 원료 자체의 색으로<br/>피부톤과 모공정리를 한번에 해결!<br/><br/>강력한 보습 효과를 보여주는 소듐하이알루로네이트를<br/>첨가하여 수분 증발과 건조함을 개선해줍니다.<br/><br/>기존의 선크림들은 바르면 간질간질하고 답답하며<br/>모공이 다 막힐 것만 같은 느낌이라면,<br/>아줄렌 선베이스는 촉촉함과 뽀송한 느낌으로<br/>마무리 됩니다.</p>
+                            <a href="" class="M04More">더 보기 ></a>
+                        </li>
+                    </ul>
+                    </div>
+                    <p class="M04Main">THE REVE INFORMATION</p>
+                    <p class="M04Sub">THE REVE<br/>BEST SELLER</p>
+                    <img src="./img/line.png" alt="" class="line">
+                </div>
+            </div>
+        </Section>
+        <footer id="footer">
+            <div class="ft">
+              <div class="ftwWrap">
+                   <div class="footmenu">
+                        <ul>
+                            <li><a href="">브랜드스토리</a></li>
+                            <li><a href="">이용약관</a></li>
+                            <li><a href="">이용안내</a></li>
+                            <li><a href="">개인정보처리방침</a></li>
+                        </ul>
+                    </div>
+                    <p class="cp">COPYRIGHT (c) 더레브. ALL RIGHTS RESERVED. Hosting by Makeshop. Design by DesignWIB</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
