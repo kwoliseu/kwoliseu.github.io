@@ -10,6 +10,7 @@
     
     <script src="http://code.jquery.com/jquery-latest.js"></script>    
     <script src="./portfolio.js"></script>
+    <script src="./mMenu.js"></script>
     
     <style>
         * {
@@ -58,9 +59,6 @@
             width: 100%;
             height: 80px;
             border-bottom: 1px solid #fff;
-            position: fixed;
-            background-image: url(./img/hd-bg.png);
-            z-index: 99;
         }
         .hdWrap {
             width: 100%;
@@ -106,7 +104,7 @@
             background-image: url(./img/SKILLS-2.png);
         }
         .portfoloio {
-            background-image: url(./img/PORTFOLIO-2.png);
+            background-image: url(./img/PORTFOLIO-1.png);
             background-size: 80%;
             background-repeat: no-repeat;
             background-position: center;
@@ -155,6 +153,7 @@
         .logo {
             position: absolute;
             width: 75px;
+            height: auto;
             margin-left: calc((100% - 75px)/2);
             margin-top: 15px;
         }
@@ -170,10 +169,50 @@
             cursor: pointer;
             position: absolute;
             left: 5%;
-            top: 29.5px;
+            top: 14.5px;
             z-index: 2;
             transition: 0.8s;
             display: none;
+        }
+        .collMenu {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            z-index: 99;
+            transition: 0.8s;
+            margin-left: -120%;
+        }
+        .cWrap {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+        }
+        .back {
+            cursor: pointer;
+            position: absolute;
+            left: 5%;
+            top: 14.5px;
+            z-index: 2;
+            transition: 0.8s;
+        }
+        .mMenuBox {
+            position: absolute;
+            width: 100%;
+            height: 258px;
+            top: calc((100% - 258px)/2);
+        }
+        
+        
+        .mMenuList li {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .mMenuList a {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
         }
         
         
@@ -204,7 +243,7 @@
             top: 25%;
             left: 20%;
         }
-        p class="subTit" {
+        .subTit {
             position: absolute;
             color: #fff;
             top: 33%;
@@ -330,12 +369,15 @@
             .menu {
                 display: none;
             }
-            
+            .hd {
+                height: 50px;
+            }
             .logo {
                 right: 5%;
                 margin-left: 0;
-                width: 50px;
-                margin-top: 12px;
+                width: 34px;
+                height: 42px;
+                margin-top: 6px;
             }
         }
         @media screen and (min-width:481px)  and (max-width: 768px) {
@@ -345,12 +387,15 @@
             .menu {
                 display: none
             }
-            
+            .hd {
+                height: 50px;
+            }
             .logo {
                 right: 5%;
                 margin-left: 0;
-                width: 50px;
-                margin-top: 12px;
+                width: 34px;
+                height: 42px;
+                margin-top: 6px;
             }
         }
         @media screen and (min-width:769px) and (max-width: ) {
@@ -384,6 +429,29 @@
                 </div>
             </div>
         </header>
+        <div class="collMenu">
+            <div class="cWrap">
+                <div class="back">
+                    <img src="./img/back_w.png" alt="">
+                </div>
+               <div class="mMenuBox">
+                   <ul class="mMenuList">
+                       <li>
+                            <a href="./about.html">ABOUT</a>
+                        </li>
+                       <li>
+                            <a href="./skills.html">SKILLS</a>
+                       </li>
+                       <li>
+                            <a href="./portfolio.html">PORTFOLIO</a>
+                       </li>
+                       <li>
+                            <a href="./contact.html">CONTACT</a>
+                       </li>
+                   </ul>
+               </div>
+            </div>
+        </div>
         <div class="con1">
             <div class="con1Wrap">
                 <h1 class="mainTit">P O R T F O L I O</h1>
@@ -419,7 +487,7 @@
                                 <br>
                                 <br>
                                 <p class="text">특징정인 한가지 색상만 떠오르면 해당 기업의 색상은 무엇, 이라고 고정된 이미지가 잡힐수도 있기에 여러 색상을 사용하고, 그런 색상들과 막힘없이 어울리는 기업임을 강조하기위해 메인에 시선을 자로잡을 선명한 색상들을 배치했다.</p>
-                                <a href="./d4/index.html" target="_blank" class="more">더 보기></a>
+                                <a href="./d4/index" target="_blank" class="more">더 보기></a>
                             </div>
                         </div>
                     </div>
