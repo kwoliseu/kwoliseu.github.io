@@ -10,6 +10,7 @@
     
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="./contact.js"></script>
+    <script src="./mMenu.js"></script>
     <style>
         * {
             margin: 0;
@@ -108,7 +109,7 @@
             background-image: url(./img/PORTFOLIO-2.png);
         }
         .contact {
-            background-image: url(./img/CONTACT-2.png);
+            background-image: url(./img/CONTACT-1.png);
             background-size: 80%;
             background-repeat: no-repeat;
             background-position: center;
@@ -147,6 +148,7 @@
         .logo {
             position: absolute;
             width: 75px;
+            height: auto;
             margin-left: calc((100% - 75px)/2);
             margin-top: 15px;
         }
@@ -162,10 +164,50 @@
             cursor: pointer;
             position: absolute;
             left: 5%;
-            top: 29.5px;
+            top: 14.5px;
             z-index: 2;
             transition: 0.8s;
             display: none;
+        }
+        .collMenu {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            z-index: 99;
+            transition: 0.8s;
+            margin-left: -120%;
+        }
+        .cWrap {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+        }
+        .back {
+            cursor: pointer;
+            position: absolute;
+            left: 5%;
+            top: 14.5px;
+            z-index: 2;
+            transition: 0.8s;
+        }
+        .mMenuBox {
+            position: absolute;
+            width: 100%;
+            height: 258px;
+            top: calc((100% - 258px)/2);
+        }
+        
+        
+        .mMenuList li {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .mMenuList a {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
         }
         
         
@@ -233,12 +275,15 @@
             .menu {
                 display: none;
             }
-            
+            .hd {
+                height: 50px;
+            }
             .logo {
                 right: 5%;
                 margin-left: 0;
-                width: 50px;
-                margin-top: 12px;
+                width: 34px;
+                height: 42px;
+                margin-top: 6px;
             }
             
             
@@ -262,12 +307,15 @@
             .menu {
                 display: none
             }
-            
+            .hd {
+                height: 50px;
+            }
             .logo {
                 right: 5%;
                 margin-left: 0;
-                width: 50px;
-                margin-top: 12px;
+                width: 34px;
+                height: 42px;
+                margin-top: 6px;
             }
             
             
@@ -328,6 +376,29 @@
                 </div>
             </div>
         </header>
+        <div class="collMenu">
+            <div class="cWrap">
+                <div class="back">
+                    <img src="./img/back_w.png" alt="">
+                </div>
+               <div class="mMenuBox">
+                   <ul class="mMenuList">
+                       <li>
+                            <a href="./about.html">ABOUT</a>
+                        </li>
+                       <li>
+                            <a href="./skills.html">SKILLS</a>
+                       </li>
+                       <li>
+                            <a href="./portfolio.html">PORTFOLIO</a>
+                       </li>
+                       <li>
+                            <a href="./contact.html">CONTACT</a>
+                       </li>
+                   </ul>
+               </div>
+            </div>
+        </div>
         <div class="con1">
             <div class="con1Wrap">
                 <h1>THANK YOU<br>FOR WATCHING</h1>
