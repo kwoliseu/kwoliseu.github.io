@@ -8,9 +8,9 @@
     
     <link rel="shortcut icon" href="./img/icon.png">
     
-    <script src="jquery-3.3.1.min.js"></script>
-    <script src="about.js"></script>
-    <script src="mMenu.js"></script>
+    <script src="./jquery-3.3.1.min.js"></script>
+    <script src="./about.js"></script>
+    <script src="./mMenu.js"></script>
     <style>
         * {
             margin: 0;
@@ -36,7 +36,7 @@
         
         
         body{            
-            background:url(img/bg-cover.png) no-repeat center center fixed;
+            background:url(img/bg-about.png) no-repeat center center fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
@@ -252,6 +252,147 @@
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        .con3 {
+            width: 100%;
+            height: 100%;
+        }
+        .con3Wrap {
+            width: 80%;
+            height: 100%;
+            margin-left: 10%;
+        }
+        
+        
+        
+        .myImg {
+            position: absolute;
+            width: 25%;
+            height: 80%;
+            margin-top: 10%;
+            margin-left: 4%;
+        }
+        .photo {
+            position: absolute;
+        }
+        .me {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+        }
+        
+        
+        
+        .pn {
+            position: absolute;
+            width: 44%;
+            height: 80%;
+            margin-left: 34%;
+            margin-top: 10%;
+        }
+        .title {
+            color: #fff;
+            line-height: 80px;
+        }
+        .pnTop p {
+            color: #fff;
+            line-height: 28px;
+            font-size: 17px;
+        }
+        .underline {
+              background-image: linear-gradient(90deg, #de15ac 0%, #1544de 120%);
+              background-repeat: no-repeat;
+              background-size: 120% 0.3em;
+              background-position: 0 90%;
+              transition:0.25s;
+        }
+        .underline:hover {
+              background-size: 120% 90%;
+        }
+        
+        
+        
+        
+        
+        .pnBt {
+            margin-top: 6%;
+        }
+        .chart {
+            width: 90%;
+        }
+        .chart li {
+            position: relative;
+            margin-top: 3%;
+        }
+        .chart li p {
+            color: #fff;
+        }
+        .left {
+            position: absolute;
+        }
+        .right {
+            text-align: right;
+        }
+        .box {
+            position: relative;
+            width: 100%;
+            height: 12px;
+            background: #fff;
+            border-radius: 20px;
+            margin-top: 4px;
+            overflow: hidden;
+        }
+        .a .box div {
+            background: #ffbab9;
+            width: 70%;
+            height: 100%;
+            margin-left: 30%;
+        }
+        .b .box div {
+            background: #ffbab9;
+            width: 63%;
+            height: 100%;
+        }
+        .c .box div {
+            background: #ffbab9;
+            width: 72%;
+            height: 100%;
+            margin-left: 28%;
+        }
+        .d .box div {
+            background: #ffbab9;
+            width: 73%;
+            height: 100%;
+            margin-left: 27%;
+        }
+        .e .box div {
+            background: #ffbab9;
+            width: 82%;
+            height: 100%;
+            margin-left: 18%;
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         @media screen and (max-width: 480px) {
             .mMenu {
                 display: block;
@@ -396,6 +537,63 @@
                 <img src="./img/about_my.png" alt="my" class="my">
                 <img src="./img/about_logo.png" alt="img" class="logo2">
                 <p class="text"><strong>생년월일</strong><br>1995. 01. 27.<br><br><strong>학력</strong><br>2014. 02. ~ 2017. 08.<br>우송대학교 미디어디자인학부 졸업<br>2011. 02. ~ 2013. 12.<br>대전이문고등학교 졸업</p>
+            </div>
+        </div>
+        <div class="con3">
+            <div class="con3Wrap">
+                <div class="myImg">
+                    <div class="photo"><img src="./img/photo.png" alt="내가 찍은 사진"></div>
+                    <div class="me"><img src="./img/me.png" alt="나"></div>
+                </div>
+                <div class="pn">
+                    <div class="pnTop">
+                        <h2 class="title">열정적인 중재자 (INFP-T)</h2>
+                        <p> <span class="underline">최악의 상황</span>이나 <span class="underline">악한 사람</span>에게서도 <span class="underline">좋은 면</span>만을 바라보며 <span class="underline">긍정적</span>이고 <span class="underline">더 나은 상황을
+                        만들고자 노력하는<br> 진정한 이상주의자</span>이며, 간혹 침착하고 내성적이며 심지어는
+                        <span class="underline">수줍음이 많은 사람</span>처럼 비추어지기도 하지만,<br> 이들 안에는 <span class="underline">불</span>만 지피면
+                        활활 타오를 수 있는 <span class="underline">열정의 불꽃이 숨어있습니다.</span><br> 간혹 사람들의 오해를 사기도 하지만,
+                        <span class="underline">마음이 맞는 사람</span>을 만나면 이들 안에 내재한 <span class="underline">충만한 즐거움과<br> 넘치는 영감을 경험</span>합니다.</p>
+                    </div>
+                    <div class="pnBt">
+                        <ul class="chart">
+                            <li class="a">
+                                <p class="left">외향형</p>
+                                <p class="right">내향형</p>
+                                <div class="box">
+                                    <div></div>
+                                </div>
+                            </li>
+                            <li class="b">
+                                <p class="left">직관형</p>
+                                <p class="right">현실주의형</p>
+                                <div class="box">
+                                    <div></div>
+                                </div>
+                            </li>
+                            <li class="c">
+                                <p class="left">이성적사고형</p>
+                                <p class="right">원칙주의형</p>
+                                <div class="box">
+                                    <div></div>
+                                </div>
+                            </li>
+                            <li class="d">
+                                <p class="left">계획형</p>
+                                <p class="right">탐색형</p>
+                                <div class="box">
+                                    <div></div>
+                                </div>
+                            </li>
+                            <li class="e">
+                                <p class="left">자기주장형</p>
+                                <p class="right">진중형</p>
+                                <div class="box">
+                                    <div></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
