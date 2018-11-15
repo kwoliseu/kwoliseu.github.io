@@ -1,5 +1,4 @@
-
-        $(document).ready(function(){
-           $(".cover a").hide();
-           $(".cover a").fadeIn(2000);
-        });
+$(document).ready(function(){
+    $(".imgBox").hide();
+    $(".imgBox").fadeIn(2000);
+})
