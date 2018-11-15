@@ -8,9 +8,9 @@
     
     <link rel="shortcut icon" href="./img/icon.png">
     
-    <script src="jquery-3.3.1.min.js"></script>    
-    <script src="portfolio.js"></script>
+    <script src="jquery-3.3.1.min.js"></script>
     <script src="mMenu.js"></script>
+    <script src="portfolio.js"></script>
     
     <style>
         * {
@@ -31,6 +31,7 @@
         img {
             border: 0;
         }
+        
         
         
         
@@ -227,135 +228,157 @@
         
         .con1 {
             width: 100%;
-            height: 100%;
-            background-image: url(img/p-bg1.png);
+            height: auto;
+            margin: 3% 0%;
         }
-        .con1Wrap {
+        
+        .top {
             width: 100%;
-            height: 100%;
+            height: 80px;
+        }
+        
+        .topWrap {    
+            width: 640px;
+            height: 80px;
+            margin-left: calc((100% - 640px)/2);
+        }
+        
+        .topWrap li {            
+            float: left;
             position: relative;
+            text-align: center;
+            width: calc(100% / 4);
+            height: 40px;
+            margin-top: calc((80px - 40px)/2);
         }
-        h1 {
-            position: absolute;
-            font-size: 3.5em;
+        .topWrap li p {
             color: #fff;
-            top: 25%;
-            left: 20%;
-        }
-        .subTit {
-            position: absolute;
-            color: #fff;
-            top: 33%;
-            left: 20%;
-            font-weight: normal;
-        }
-        
-        
-        
-        
-        
-        /*btn*/
-        .btnBox {
-            width: 60px;
-            height: 300px;
-            position: absolute;
-            top: 40%;
-            left: 20%;
-        }
-        .btnBox li {
-            width: 60px;
-            height: 60px;
-            background-image: url(img/btn1.png);
+            font-size: 18px;
+            padding: 12px;
+            font-weight: bold;
+            transition: 0.6s;
+            background-position: 1% 50%;
             cursor: pointer;
-            margin: 26px 0;
-            transition: 0.4s;
         }
-        .btnBox li.on {
-            background-image: url(img/btn2.png);
+        .topWrap li p:hover {
+            font-weight: bold;
+            background-color: #fff;
+            color: #271746;
+            background-position: 99% 50%;
+        }
+        .topWrap li p.on {
+            background-color: #fff;
+            color: #271746
         }
         
         
-        
-        
-        .listBox {
+        .cardList {
+            margin-top: 2%;
+            display: flex;
+            flex-wrap: wrap;
+            width: 70%;
+            margin-left: 15%;
+            transition: 0.6s;
+            justify-content: center;
+        }
+        .cardBox {
+            width: calc(25% - 2%);
+            margin: 1%;
+            cursor: pointer;
+        }
+        .card {
+            transform-style: preserve-3d;
+            /*perspective: 1000px*/
+        }
+        .img, .rear {
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+            backface-visibility: hidden;
+            text-align: center;
+            color: #fff;
+            min-height: 280px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .img {
+            transform: rotateY(0deg);
+            transform-style: preserve-3d;
+        }
+        .rear {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            transform: rotateY(180deg);
+            transform-style: preserve-3d;
+        }
+        .img:after {
+            position: absolute;
             width: 100%;
             height: 100%;
+            background-color: #000;
+            opacity: 0.5;
+            content: '';
+            border-radius: 10px;
+            display: block;
+            top: 0;
+        }
+        .card:hover .img, .card:hover .rear {
+            transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        }
+        .card:hover .img {
+            transform: rotateY(-180deg);
+            transform-style: preserve-3d;
+        }
+        .card:hover .rear {
+            transform: rotateY(0deg);
+            transform-style: preserve-3d;
         }
         
-        .listBox > div {
-            opacity: 0;
-            transition: 0.4s;
+        .text {
+            transform: translateY(-50%) translateZ(80px) scale(0.94);
             position: absolute;
-            right: 13%;
+            width: 100%;
+            box-sizing: border-box;
+            perspective: inherit;
+            z-index: 99;
+            top: 45%;
+            letter-spacing : 1px;
+            line-height: 22px;
         }
         
-        .listBox > div.on {
-            opacity: 1;
-            z-index: 5;
+        .rear div p {
+            font-size: 15px;
+            /*font-weight: lighter;*/
+            padding: 0 10px;
+            /*text-shadow: 5px 3px 4px #ccc;*/
+            color: #333;
         }
-        .imgBox {
-            margin-top: 22%;
+        .img div p {
+            padding-bottom: 20px;
+            font-size: 26px;
+            font-weight: bold;
         }
-        .textList {
-            background-color: #fff;
-            width: 380px;
-            height: 280px;
-            position: absolute;
-            top: 70%;
-            right: 80%;
-            transition: 0.6s;
+        .img div span {
+            font-weight: lighter;
         }
-        .textBox {
-            width: 70%;
-            height: 80%;
-            margin: 10% 15%;
+        
+        .cardList div.off {
+            display: none;
         }
+        
         .more {
             position: absolute;
-            bottom: 13%;
-            right: 15%;
-            color: #f57d7a;
+            bottom: 7%;
+            right: 10%;
+            color: #ff9595;
             border-bottom: 1px solid;
+            transform: translateY(-50%) translateZ(80px) scale(0.94);
+            position: absolute;
+            /*text-shadow: 5px 3px 4px #ccc;*/
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        .con2 {
-            width: 100%;
-            height: 100%;
-            background-image: url(img/p-bg2.png);
-        }
-        .con2Wrap {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-        
-        
-        
-        
-        
-        
-        
-        .con3 {
-            width: 100%;
-            height: calc(100% - 81px);
-            background-image: url(img/p-bg3.png);
-        }
-        .con3Wrap {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-        
-        
-        
         
         
         
@@ -378,6 +401,37 @@
                 height: 42px;
                 margin-top: 6px;
             }
+            
+            
+            
+            
+            
+            
+            .top {
+                margin-top: 5%;
+                height: 130px;
+            }
+            .topWrap {
+                width: 80%;
+                margin-left: 10%;
+            }
+            .topWrap li{
+                width: calc(100% / 2);
+            }
+            
+            
+            .cardList {
+                width: 90%;
+                margin-left: 5%;
+            }
+            .cardBox {
+                width: 96%;
+                padding: 2%;
+            }
+            
+            
+            
+            
         }
         @media screen and (min-width:481px)  and (max-width: 768px) {
             .mMenu {
@@ -396,9 +450,88 @@
                 height: 42px;
                 margin-top: 6px;
             }
-        }
-        @media screen and (min-width:769px) and (max-width: ) {
             
+            
+            
+            
+            
+            
+            
+            .topWrap {
+                width: 80%;
+                margin-left: 10%;
+            }
+            
+            
+            .cardList {
+                width: 84%;
+                margin-left: 8%;
+            }
+            .cardBox {
+                width: calc(50% - 2%);
+            }
+            
+            
+            
+        }
+        @media screen and (min-width:769px) and (max-width:1400px ) {
+            
+            
+            
+            
+            
+            
+            .cardList {
+                width: 80%;
+                margin-left: 10%;
+            }
+            .cardBox {
+                width: calc(33.333333% - 2%);
+            }
+            
+        }
+        
+
+        @-webkit-keyframes Gradient {
+            0% {
+                background-position: 0% 50%
+            }
+
+            50% {
+                background-position: 100% 50%
+            }
+
+            100% {
+                background-position: 0% 50%
+            }
+        }
+
+        @-moz-keyframes Gradient {
+            0% {
+                background-position: 0% 50%
+            }
+
+            50% {
+                background-position: 100% 50%
+            }
+
+            100% {
+                background-position: 0% 50%
+            }
+        }
+
+        @keyframes Gradient {
+            0% {
+                background-position: 0% 50%
+            }
+
+            50% {
+                background-position: 100% 50%
+            }
+
+            100% {
+                background-position: 0% 50%
+            }
         }
     </style>
 </head>
@@ -452,220 +585,110 @@
             </div>
         </div>
         <div class="con1">
-            <div class="con1Wrap">
-                <h1 class="mainTit">P O R T F O L I O</h1>
-                <p class="subTit">DESKTOP</p>
-                <ul class="btnBox">
-                    <li class="btn1 on"></li>
-                    <li class="btn2"></li>
-                    <li class="btn3" style="display: none;"></li>
-                    <li class="btn4" style="display: none;"></li>
+            <div class="top">
+                <ul class="topWrap">
+                    <li class="allBtn"><p class="on">ALL</p></li>
+                    <li class="dtBtn"><p>DESKTOP</p></li>
+                    <li class="mbBtn"><p>MOBILE</p></li>
+                    <li class="rsBtn"><p>RESPONSIVE</p></li>
                 </ul>
-                <div class="listBox">
-                    <div class="list1 on">
-                        <div class="imgBox">
-                            <img src="./img/d3.png" alt="">
-                        </div>
-                        <div class="textList">
-                            <div class="textBox">
-                                <h3>THE REVE</h3>
-                                <br>
-                                <br>
-                                <p class="text">뷰티 사이트. 천연 화장품임을 강조하는 기업이기에 주된 컬러는 녹색으로 선택하였으며, 신뢰도를 더 끌어올리기 위해 메인 비주얼에 자연의 이미지를 배치했다. </p>
-                                <a href="./d3/index.html" target="_blank" class="more">더 보기></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list2">
-                        <div class="imgBox">
-                            <img src="./img/d4.png" alt="">
-                        </div>
-                        <div class="textList">
-                            <div class="textBox">
-                                <h3>THE HANDSOME</h3>
-                                <br>
-                                <br>
-                                <p class="text">특징정인 한가지 색상만 떠오르면 해당 기업의 색상은 무엇, 이라고 고정된 이미지가 잡힐수도 있기에 여러 색상을 사용하고, 그런 색상들과 막힘없이 어울리는 기업임을 강조하기위해 메인에 시선을 자로잡을 선명한 색상들을 배치했다.</p>
-                                <a href="./d4/index" target="_blank" class="more">더 보기></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list3">
-                        <div class="imgBox">
-                            <img src="http://placehold.it/730x520/777" alt="">
-                        </div>
-                        <div class="textList">
-                            <div class="textBox">
-                                <h3>제목3</h3>
-                                <br>
-                                <br>
-                                <p class="text">설명글 설명글 설명글 설명글</p>
-                                <a href="kwoliseu.github.io/d2" target="_blank" class="more">더 보기></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list4">
-                        <div class="imgBox">
-                            <img src="http://placehold.it/730x520/bbb" alt="">
-                        </div>
-                        <div class="textList">
-                            <div class="textBox">
-                                <h3>제목4</h3>
-                                <br>
-                                <p class="sub">기업형 / 블로그형 / 무슨형</p>
-                                <br>
-                                <br>
-                                <p class="text">설명글 설명글 설명글 설명글</p>
-                                <a href="" target="_blank" class="more">더 보기></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
-        <div class="con2">
-            <div class="con2Wrap">
-                <h1 class="mainTit">P O R T F O L I O</h1>
-                <p class="subTit">MOBILE</p>
-                <ul class="btnBox">
-                    <li class="btn5 on"></li>
-                    <li class="btn6"></li>
-                    <li class="btn7" style="display: none;"></li>
-                    <li class="btn8" style="display: none;"></li>
-                </ul>
-                <div class="listBox">
-                    <div class="list5 on">
-                        <div class="imgBox">
-                            <img src="./img/m7.png" alt="">
-                        </div>
-                        <div class="textList">
-                            <div class="textBox">
-                                <h3>O!Oi</h3>
-                                <br>
-                                <br>
-                                <p class="text" style="font-size: 0.9em;">해당 기업에 속한 브랜드를 소개하는 페이지. 가로 360px을 중심으로 제작했다. 해당 기업의 심플하고도 귀여운 느낌과 상품 이미지들을 부각시키기 위해 큰 포인트 컬러 없이 무채색을 사용했으며, 사용자로 하여금 익숙한 느낌이 들도록 두 브랜드를 소개할때 반복되는 레이아웃을 사용했다.</p>
-                                <a href="./m7/index.html" target="_blank" class="more">더 보기></a>
+            <div class="cardList">
+                <div class="cardBox dt">
+                    <div class="card">
+                        <div class="img" style="background-image: url(./img/thereve.png)">
+                            <div class="text">
+                                <p>THE REVE</p>
+                                <span>DESKTOP</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="list6">
-                        <div class="imgBox">
-                            <img src="./img/m4.png" alt="">
-                        </div>
-                        <div class="textList">
-                            <div class="textBox">
-                                <h3>대전지방경찰청</h3>
-                                <br>
-                                <p class="text" style="font-size: 0.9em;">경찰청 사이트의 모바일형. 가로 360px을 중심으로 제작했다. 경찰청 하면 생각나는 딱딱하고 굳은 느낌은 사용자로 하여금 긴장상태를 불러올 수도 있기에 보다 편안한 느낌이 들 수 있도록 주 컬러로 선택된 푸른색을 배경색으로 넣고, 친숙한 느낌을 불러 일으키도록 컬러가 들어간 아이콘을 배치했다. 정보 전달을 해야할 곳은 흰색을 바탕으로 하여 보다 시선을 집중할 수 있도록 제작했다.</p>
-                                <a href="./m4/index.html" target="_blank" class="more">더 보기></a>
+                        <div class="rear">
+                            <div class="text">
+                                <p>뷰티 사이트입니다. 천연 화장품임을 강조하는 기업이기에 주된 컬러는 녹색으로 선택하였으며, 신뢰도를 더 끌어올리기 위해 메인 비주얼에 자연의 이미지를 배치했습니다.</p>
                             </div>
+                            <a href="./d3/index.html" target="_blank" class="more">더 보기></a>
                         </div>
-                    </div>
-                    <div class="list7">
-                        <div class="imgBox">
-                            <img src="http://placehold.it/730x520/777" alt="">
-                        </div>
-                        <div class="textList">
-                            <div class="textBox">
-                                <h3>제목7</h3>
-                                <br>
-                                <p class="sub">무슨형</p>
-                                <br>
-                                <br>
-                                <p class="text">설명글 설명글 설명글 설명글</p>
-                                <a href="" target="_blank" class="more">더 보기></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list8">
-                        <div class="imgBox">
-                            <img src="http://placehold.it/730x520/bbb" alt="">
-                        </div>
-                        <div class="textList">
-                            <div class="textBox">
-                                <h3>제목8</h3>
-                                <br>
-                                <p class="sub">무슨형</p>
-                                <br>
-                                <br>
-                                <p class="text">설명글 설명글 설명글 설명글</p>
-                                <a href="" target="_blank" class="more">더 보기></a>
-                            </div>
-                        </div>
-                    </div>
+                    </div>                    
                 </div>
-            </div>
-        </div>
-        <div class="con3">
-            <div class="con3Wrap">
-                <h1 class="mainTit">P O R T F O L I O</h1>
-                <p class="subTit">RESPONSIVE</p>
-                <ul class="btnBox">
-                    <li class="btn9 on"></li>
-                    <li class="btn10"></li>
-                    <li class="btn11" style="display: none;"></li>
-                    <li class="btn12" style="display: none;"></li>
-                </ul>
-                <div class="listBox">
-                    <div class="list9 on">
-                        <div class="imgBox">
-                            <img src="./img/r5.png" alt="">
-                        </div>
-                        <div class="textList">
-                            <div class="textBox">
-                                <h3>한화/기계</h3>
-                                <br>
-                                <br>
-                                <p class="text">정돈된 느낌을 살리고자 4단 그리드 형식을 사용한 원페이지 형식의 사이트이다. 해당 기업의 상징인 주황색을 주로 사용하여 해당 기업의 느낌과 잘 어울리도록 제작했다. 내용 전달에 중점을 두었기에 시선을 빼앗는 이미지는 크게 비중이 느껴지지 않도록 작게 배치했다.</p>
-                                <a href="./r5/index.html" target="_blank" class="more">더 보기></a>
+                <div class="cardBox dt">
+                    <div class="card">
+                        <div class="img" style="background-image: url(./img/hansome.png)">
+                            <div class="text">
+                                <p>THE HANDSOME</p>
+                                <span>DESKTOP</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="list10">
-                        <div class="imgBox">
-                            <img src="./img/r8.png" alt="">
+                        <div class="rear">
+                            <div class="text">
+                                <p>특징정인 한가지 색상만 떠오르면 해당 기업의 색상은 무엇, 이라고 고정된 이미지가 잡힐수도 있기에 여러 색상을 사용하고, 그런 색상들과 막힘없이 어울리는 기업임을 강조하기위해 메인에 시선을 자로잡을 선명한 색상들을 배치했습니다.</p>
+                            </div>
+                            <a href="./d4/index" target="_blank" class="more">더 보기></a>
                         </div>
-                        <div class="textList">
-                            <div class="textBox">
-                                <h3>한국건설관리공사</h3>
-                                <br>
-                                <p class="text" style="font-size: 0.9em;">원페이지 형식의 BULMA를 이용한 사이트. BULMA를 사용했기에 좌우 넓이에 따라 그리드 형식이 달라진다. 해당 기업이 공기업이기에 가능한 심플하고 깔끔한 느낌이 들 수 있도록 제작하였으며, 지저분한 느낌이 들지 않도록 BULMA의 그리드를 선택했다. 메뉴 등에 쓰일 포인트 색은 로고와 어울림은 물론 신뢰도가 느껴지는, 해당 기업의 로고에서 바탕된 푸른색을 선택했다.</p>
-                                <a href="./r8/index.html" target="_blank" class="more">더 보기></a>
+                    </div>                    
+                </div>
+                <div class="cardBox mb">
+                    <div class="card">
+                        <div class="img" style="background-image: url(./img/oioi.png)">
+                            <div class="text">
+                                <p>O!Oi</p>
+                                <span>MOBILE</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="list11">
-                        <div class="imgBox">
-                            <img src="http://placehold.it/730x520/777" alt="">
+                        <div class="rear">
+                            <div class="text">
+                                <p>해당 기업에 속한 브랜드를 소개하는 페이지로, 가로 360px을 중심으로 제작했습니다. 해당 기업의 심플하고도 귀여운 느낌과 상품 이미지들을 부각시키기 위해 큰 포인트 컬러 없이 무채색을 사용했으며, 사용자로 하여금 익숙한 느낌이 들도록 두 브랜드를 소개할때 반복되는 레이아웃을 사용했습니다.</p>
+                            </div>
+                            <a href="./m7/index.html" target="_blank" class="more">더 보기></a>
                         </div>
-                        <div class="textList">
-                            <div class="textBox">
-                                <h3>제목11</h3>
-                                <br>
-                                <p class="sub">웹 / 모바일 / 반응형</p>
-                                <br>
-                                <br>
-                                <p class="text">설명글 설명글 설명글 설명글</p>
-                                <a href="" target="_blank" class="more">더 보기></a>
+                    </div>                    
+                </div>
+                <div class="cardBox mb">
+                    <div class="card">
+                        <div class="img" style="background-image: url(./img/police.png)">
+                            <div class="text">
+                                <p>대전지방경찰청</p>
+                                <span>MOBILE</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="list12">
-                        <div class="imgBox">
-                            <img src="http://placehold.it/730x520/bbb" alt="">
+                        <div class="rear">
+                            <div class="text" style="top: 45%">
+                                <p>경찰청 사이트의 모바일형. 가로 360px을 중심으로 제작했습니다. 경찰청 하면 생각나는 딱딱하고 굳은 느낌은 사용자로 하여금 긴장상태를 불러올 수도 있기에 보다 편안한 느낌이 들 수 있도록 주 컬러로 선택된 푸른색을 배경색으로 넣고, 컬러가 들어간 아이콘을 배치했습니다. 정보 전달을 해야할 곳은 흰색을 바탕으로 하여 보다 시선을 집중할 수 있도록 제작했습니다.</p>
+                            </div>
+                            <a href="./m4/index.html" target="_blank" class="more">더 보기></a>
                         </div>
-                        <div class="textList">
-                            <div class="textBox">
-                                <h3>제목12</h3>
-                                <br>
-                                <p class="sub">웹 / 모바일 / 반응형</p>
-                                <br>
-                                <br>
-                                <p class="text">설명글 설명글 설명글 설명글</p>
-                                <a href="" target="_blank" class="more">더 보기></a>
+                    </div>                    
+                </div>
+                <div class="cardBox rs">
+                    <div class="card">
+                        <div class="img" style="background-image: url(./img/hanwha.png)">
+                            <div class="text">
+                                <p>한화/기계</p>
+                                <span>RESPONSIVE</span>
                             </div>
                         </div>
-                    </div>
+                        <div class="rear">
+                            <div class="text">
+                                <p>정돈된 느낌을 살리고자 4단 그리드 형식을 사용한 원페이지 형식의 사이트입니다. 해당 기업의 상징인 주황색을 주로 사용하여 기업의 느낌과 잘 어울리도록 제작했다. 내용 전달에 중점을 두었기에 시선을 빼앗는 이미지는 크게 비중이 느껴지지 않도록 작게 배치했습니다.</p>
+                            </div>
+                            <a href="./r5/index.html" target="_blank" class="more">더 보기></a>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="cardBox rs">
+                    <div class="card">
+                        <div class="img" style="background-image: url(./img/korcm.png)">
+                            <div class="text">
+                                <p>한국건설관리공사</p>
+                                <span>RESPONSIVE</span>
+                            </div>
+                        </div>
+                        <div class="rear">
+                            <div class="text">
+                                <p>원페이지 형식의 BULMA를 이용한 사이트로, BULMA를 사용했기에 좌우 넓이에 따라 그리드 형식이 달라집니다. 해당 기업이 공기업이기에 가능한 심플하고 깔끔한 느낌이 들 수 있도록 제작하였으며, 지저분한 느낌이 들지 않도록 BULMA의 그리드를 선택했습니다.</p>
+                            </div>
+                            <a href="./r8/index.html" target="_blank" class="more">더 보기></a>
+                        </div>
+                    </div>                    
                 </div>
             </div>
         </div>
